@@ -1,6 +1,6 @@
-import React from "react"
-import { Card, CardBody, Button, Row, Col } from "reactstrap"
-import notAuthImg from "../../../assets/img/pages/not-authorized.png"
+import React from "react";
+import { AlertTriangle } from "react-feather";
+import { Card, CardBody, Button, Row, Col } from "reactstrap";
 
 class NotAuthorized extends React.Component {
   render() {
@@ -9,19 +9,11 @@ class NotAuthorized extends React.Component {
         <Col sm="12">
           <Card className="auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
             <CardBody className="text-center">
-              <img
-                src={notAuthImg}
-                alt="notAuthImg"
-                className="img-fluid align-self-center mt-75"
-              />
+              <AlertTriangle size="150" />
               <h1 className="font-large-2 my-2">You are not authorized!</h1>
               <p className="pt-2 mb-0">
-                paraphonic unassessable foramination Caulopteris worral
-                Spirophyton encrimson esparcet aggerate chondrule restate
-                whistler shallopy
-              </p>
-              <p className="pb-2">
-                biosystematy area bertram plotting unstarting quarterstaff.
+                You are not authorized to access this page. Please request
+                access from admin.
               </p>
               <Button.Ripple
                 tag="a"
@@ -36,7 +28,7 @@ class NotAuthorized extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default NotAuthorized
+export default NotAuthorized;

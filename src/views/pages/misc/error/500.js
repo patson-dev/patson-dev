@@ -1,6 +1,6 @@
-import React from "react"
-import { Card, CardBody, Button, Row, Col } from "reactstrap"
-import errorImg from "../../../../assets/img/pages/500.png"
+import React from "react";
+import { Server } from "react-feather";
+import { Card, CardBody, Button, Row, Col } from "reactstrap";
 
 class Error500 extends React.Component {
   render() {
@@ -9,20 +9,10 @@ class Error500 extends React.Component {
         <Col sm="12">
           <Card className="auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
             <CardBody className="text-center">
-              <img
-                src={errorImg}
-                alt="ErrorImg"
-                className="img-fluid align-self-center mt-75"
-              />
-              <h1 className="font-large-2 my-2">Internal Server Error!</h1>
-              <p className="pt-2 mb-0">
-                susceptive nonturbinated indoctrination formulary dyskinetic
-                deafforest Strumella frolicsomeness encrustment portia
-                myelination
-              </p>
-              <p className="pb-2">
-                lachrymatory bestain hoople piscator pyramidoidal parter clipt.
-              </p>
+              <Server size="150" />
+              <h1 className="font-large-2 my-2 mt-3">
+                500 - Internal Server Error!
+              </h1>
               <Button.Ripple
                 tag="a"
                 href="/"
@@ -36,7 +26,7 @@ class Error500 extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default Error500
+export default Error500;

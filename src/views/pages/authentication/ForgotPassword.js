@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -10,11 +10,10 @@ import {
   Form,
   Input,
   Button,
-  Label
-} from "reactstrap"
-import fgImg from "../../../assets/img/pages/forgot-password.png"
-import { history } from "../../../history"
-import "../../../assets/scss/pages/authentication.scss"
+  Label,
+} from "reactstrap";
+import { history } from "../../../history";
+import "../../../assets/scss/pages/authentication.scss";
 
 class ForgotPassword extends React.Component {
   render() {
@@ -29,13 +28,7 @@ class ForgotPassword extends React.Component {
         >
           <Card className="bg-authentication rounded-0 mb-0 w-100">
             <Row className="m-0">
-              <Col
-                lg="6"
-                className="d-lg-block d-none text-center align-self-center"
-              >
-                <img src={fgImg} alt="fgImg" />
-              </Col>
-              <Col lg="6" md="12" className="p-0">
+              <Col lg="12" md="12" className="p-0">
                 <Card className="rounded-0 mb-0 px-2 py-1">
                   <CardHeader className="pb-1">
                     <CardTitle>
@@ -67,9 +60,9 @@ class ForgotPassword extends React.Component {
                           color="primary"
                           type="submit"
                           className="px-75 btn-block"
-                          onClick={e => {
-                            e.preventDefault()
-                            history.push("/")
+                          onClick={(e) => {
+                            e.preventDefault();
+                            history.push("/");
                           }}
                         >
                           Recover Password
@@ -83,7 +76,7 @@ class ForgotPassword extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default ForgotPassword
+export default ForgotPassword;

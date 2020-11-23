@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -10,26 +10,25 @@ import {
   NavItem,
   NavLink,
   TabContent,
-  TabPane
-} from "reactstrap"
-import classnames from "classnames"
-import RegisterFirebase from "./RegisterFirebase"
-import RegisterAuth0 from "./RegisterAuth0"
-import RegisterJWT from "./RegisterJWT"
-import registerImg from "../../../../assets/img/pages/register.jpg"
-import "../../../../assets/scss/pages/authentication.scss"
+  TabPane,
+} from "reactstrap";
+import classnames from "classnames";
+import RegisterFirebase from "./RegisterFirebase";
+import RegisterAuth0 from "./RegisterAuth0";
+import RegisterJWT from "./RegisterJWT";
+import "../../../../assets/scss/pages/authentication.scss";
 
 class Register extends React.Component {
   state = {
-    activeTab: "1"
-  }
-  toggle = tab => {
+    activeTab: "1",
+  };
+  toggle = (tab) => {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
-      })
+        activeTab: tab,
+      });
     }
-  }
+  };
   render() {
     return (
       <Row className="m-0 justify-content-center">
@@ -42,13 +41,7 @@ class Register extends React.Component {
         >
           <Card className="bg-authentication rounded-0 mb-0 w-100">
             <Row className="m-0">
-              <Col
-                lg="6"
-                className="d-lg-block d-none text-center align-self-center px-1 py-0"
-              >
-                <img className="mr-1" src={registerImg} alt="registerImg" />
-              </Col>
-              <Col lg="6" md="12" className="p-0">
+              <Col lg="12" md="12" className="p-0">
                 <Card className="rounded-0 mb-0 p-2">
                   <CardHeader className="pb-1 pt-50">
                     <CardTitle>
@@ -56,16 +49,16 @@ class Register extends React.Component {
                     </CardTitle>
                   </CardHeader>
                   <p className="px-2 auth-title mb-0">
-                    Fill the below form to create a new account.
+                    PLEASE FILL THE FROM BELOW.
                   </p>
                   <Nav tabs className="px-2">
                     <NavItem>
                       <NavLink
                         className={classnames({
-                          active: this.state.activeTab === "1"
+                          active: this.state.activeTab === "1",
                         })}
                         onClick={() => {
-                          this.toggle("1")
+                          this.toggle("1");
                         }}
                       >
                         JWT
@@ -74,10 +67,10 @@ class Register extends React.Component {
                     <NavItem>
                       <NavLink
                         className={classnames({
-                          active: this.state.activeTab === "2"
+                          active: this.state.activeTab === "2",
                         })}
                         onClick={() => {
-                          this.toggle("2")
+                          this.toggle("2");
                         }}
                       >
                         Firebase
@@ -86,10 +79,10 @@ class Register extends React.Component {
                     <NavItem>
                       <NavLink
                         className={classnames({
-                          active: this.state.activeTab === "3"
+                          active: this.state.activeTab === "3",
                         })}
                         onClick={() => {
-                          this.toggle("3")
+                          this.toggle("3");
                         }}
                       >
                         Auth0
@@ -115,7 +108,7 @@ class Register extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default Register
+export default Register;

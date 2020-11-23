@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -9,11 +9,11 @@ import {
   Input,
   FormGroup,
   Label,
-  Button
-} from "reactstrap"
-import csImg from "../../../assets/img/pages/rocket.png"
-import "../../../assets/scss/pages/coming-soon.scss"
-import Countdown from "react-countdown-now"
+  Button,
+} from "reactstrap";
+import csImg from "../../../assets/img/pages/rocket.png";
+import "../../../assets/scss/pages/coming-soon.scss";
+import Countdown from "react-countdown-now";
 
 class ComingSoon extends React.Component {
   renderTimer = ({ days, hours, minutes, seconds }) => {
@@ -36,8 +36,8 @@ class ComingSoon extends React.Component {
           <p className="bg-amber clockFormat lead px-1 black"> Seconds </p>
         </div>
       </React.Fragment>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -45,10 +45,9 @@ class ComingSoon extends React.Component {
         <Col xl="5" md="8" className="px-md-0 px-2">
           <Card className="mb-0">
             <CardHeader className="justify-content-center">
-              <h2>We are launching soon</h2>
+              <h1>We are launching soon</h1>
             </CardHeader>
             <CardBody className="text-center">
-              <img src={csImg} alt="csImg" className="img-fluid width-150" />
               <div className="text-center getting-started pt-2 d-flex justify-content-center flex-wrap">
                 <Countdown
                   date={Date.now() + 50000000000}
@@ -58,24 +57,23 @@ class ComingSoon extends React.Component {
               <div className="divider">
                 <div className="divider-text">Subscribe</div>
               </div>
-              <p className="text-left mb-2">
-                If you would like to be notified when our app is live, Please
-                subscribe to our mailing list by entering your email.
-              </p>
+              <h3 className="text-center mb-2">
+                STAY INFORMED ON ALL THE UPDATES
+              </h3>
               <Form>
                 <FormGroup className="form-label-group">
                   <Input placeholder="Email" />
                   <Label>Email</Label>
                 </FormGroup>
               </Form>
-              <Button.Ripple block color="primary" className="btn-block">
+              <Button.Ripple block color="primary" className="btn-block square">
                 Subscribe
               </Button.Ripple>
             </CardBody>
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default ComingSoon
+export default ComingSoon;

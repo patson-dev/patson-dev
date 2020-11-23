@@ -1,6 +1,6 @@
-import React from "react"
-import { Card, CardBody, Button, Row, Col } from "reactstrap"
-import underMaintenance from "../../../assets/img/pages/maintenance-2.png"
+import React from "react";
+import { AlertOctagon } from "react-feather";
+import { Card, CardBody, Button, Row, Col } from "reactstrap";
 
 class Maintenance extends React.Component {
   render() {
@@ -9,19 +9,10 @@ class Maintenance extends React.Component {
         <Col sm="12">
           <Card className="auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
             <CardBody className="text-center">
-              <img
-                src={underMaintenance}
-                alt="underMaintenance"
-                className="img-fluid align-self-center mt-75"
-              />
+              <AlertOctagon size="150" />
               <h1 className="font-large-2 my-1">Under Maintenance!</h1>
               <p className="px-2 mb-0">
-                paraphonic unassessable foramination Caulopteris worral
-                Spirophyton encrimson esparcet aggerate chondrule restate
-                whistler shallopy
-              </p>
-              <p className="px-2">
-                biosystematy area bertram plotting unstarting quarterstaff.
+                Sorry, this site is currently under maintainance.
               </p>
               <Button.Ripple
                 tag="a"
@@ -36,7 +27,7 @@ class Maintenance extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default Maintenance
+export default Maintenance;

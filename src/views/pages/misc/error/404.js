@@ -1,6 +1,6 @@
-import React from "react"
-import { Card, CardBody, Button, Row, Col } from "reactstrap"
-import errorImg from "../../../../assets/img/pages/404.png"
+import React from "react";
+import { AlertTriangle } from "react-feather";
+import { Card, CardBody, Button, Row, Col } from "reactstrap";
 
 class Error404 extends React.Component {
   render() {
@@ -9,19 +9,10 @@ class Error404 extends React.Component {
         <Col sm="12">
           <Card className="auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
             <CardBody className="text-center">
-              <img
-                src={errorImg}
-                alt="ErrorImg"
-                className="img-fluid align-self-center"
-              />
+              <AlertTriangle size="150" />
               <h1 className="font-large-2 my-1">404 - Page Not Found!</h1>
               <p className="pt-2 mb-0">
-                paraphonic unassessable foramination Caulopteris worral
-                Spirophyton encrimson esparcet aggerate chondrule restate
-                whistler shallopy
-              </p>
-              <p className="pb-2">
-                biosystematy area bertram plotting unstarting quarterstaff.
+                SORRY, THE PAGE YOU ARE LOOKING FOR CANNOT BE FOUND.
               </p>
               <Button.Ripple
                 tag="a"
@@ -36,7 +27,7 @@ class Error404 extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default Error404
+export default Error404;

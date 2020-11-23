@@ -2,9 +2,8 @@ import React from "react";
 import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap";
 import { Link } from "react-router-dom";
 import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
-import { Mail, Lock, Check, Facebook, Twitter, GitHub } from "react-feather";
+import { Mail, Lock, Check} from "react-feather";
 import { history } from "../../../../history";
-import googleSvg from "../../../../assets/img/svg/google.svg";
 import { connect } from "react-redux";
 import {
   submitLoginWithFireBase,
@@ -16,8 +15,8 @@ import {
 
 class LoginFirebase extends React.Component {
   state = {
-    email: "demo@demo.com",
-    password: "demodemo",
+    email: "",
+    password: "",
     remember: false,
   };
 
@@ -95,43 +94,6 @@ class LoginFirebase extends React.Component {
             </div>
           </Form>
         </CardBody>
-        <div className="auth-footer">
-          <div className="divider">
-            <div className="divider-text">OR</div>
-          </div>
-          <div className="footer-btn">
-            <Button.Ripple
-              className="btn-facebook"
-              color=""
-              onClick={() => {
-                this.props.loginWithFB();
-              }}
-            >
-              <Facebook size={14} />
-            </Button.Ripple>
-            <Button.Ripple
-              className="btn-twitter"
-              color=""
-              onClick={this.props.loginWithTwitter}
-            >
-              <Twitter size={14} stroke="white" />
-            </Button.Ripple>
-            <Button.Ripple
-              className="btn-google"
-              color=""
-              onClick={this.props.loginWithGoogle}
-            >
-              <img src={googleSvg} alt="google" height="15" width="15" />
-            </Button.Ripple>
-            <Button.Ripple
-              className="btn-github"
-              color=""
-              onClick={this.props.loginWithGithub}
-            >
-              <GitHub size={14} stroke="white" />
-            </Button.Ripple>
-          </div>
-        </div>
       </React.Fragment>
     );
   }

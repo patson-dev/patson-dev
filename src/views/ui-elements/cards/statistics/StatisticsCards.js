@@ -35,7 +35,7 @@ class StatisticsCards extends React.Component {
     return (
       <React.Fragment>
         <Breadcrumbs
-          breadCrumbTitle="Statistics Cards"
+          breadCrumbTitle="Statistics"
           breadCrumbParent="Card"
           breadCrumbActive="Statistics Cards"
         />

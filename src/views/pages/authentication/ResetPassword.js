@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -10,11 +10,10 @@ import {
   Form,
   Input,
   Button,
-  Label
-} from "reactstrap"
-import { history } from "../../../history"
-import resetImg from "../../../assets/img/pages/reset-password.png"
-import "../../../assets/scss/pages/authentication.scss"
+  Label,
+} from "reactstrap";
+import { history } from "../../../history";
+import "../../../assets/scss/pages/authentication.scss";
 
 class ResetPassword extends React.Component {
   render() {
@@ -29,13 +28,7 @@ class ResetPassword extends React.Component {
         >
           <Card className="bg-authentication rounded-0 mb-0 w-100">
             <Row className="m-0">
-              <Col
-                lg="6"
-                className="d-lg-block d-none text-center align-self-center px-5"
-              >
-                <img className="px-5 mx-2" src={resetImg} alt="resetImg" />
-              </Col>
-              <Col lg="6" md="12" className="p-0">
+              <Col lg="12" md="12" className="p-0">
                 <Card className="rounded-0 mb-0 px-2 py-50">
                   <CardHeader className="pb-1 pt-1">
                     <CardTitle>
@@ -74,9 +67,9 @@ class ResetPassword extends React.Component {
                           className="btn-block"
                           color="primary"
                           outline
-                          onClick={e => {
-                            e.preventDefault()
-                            history.push("/pages/login")
+                          onClick={(e) => {
+                            e.preventDefault();
+                            history.push("/pages/login");
                           }}
                         >
                           Go Back to Login
@@ -86,7 +79,7 @@ class ResetPassword extends React.Component {
                           color="primary"
                           type="submit"
                           className="btn-block mt-1 mt-sm-0"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e) => e.preventDefault()}
                         >
                           Reset
                         </Button.Ripple>
@@ -99,7 +92,7 @@ class ResetPassword extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default ResetPassword
+export default ResetPassword;
