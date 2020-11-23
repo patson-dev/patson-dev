@@ -11,7 +11,6 @@ import {
   Label,
   Button,
 } from "reactstrap";
-import csImg from "../../../assets/img/pages/rocket.png";
 import "../../../assets/scss/pages/coming-soon.scss";
 import Countdown from "react-countdown-now";
 
