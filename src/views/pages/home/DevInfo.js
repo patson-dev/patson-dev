@@ -35,9 +35,9 @@ export default class DevInfo extends Component {
                 </Media>
                 <Media body>
                   <p className="mb-0 font-mono">Hi there, my name is</p>
-                  <h3>Patson Nyandoro</h3>
+                  <h3 className="mb-2">Patson Nyandoro</h3>
                   <p className="mb-0 font-mono">I'm a</p>
-                  <h3>Web Developer</h3>
+                  <h3 className="mb-2">Web Developer</h3>
                   <p className="font-mono mb-0">Find me on</p>
                   <ButtonGroup>
                     <a href="https://www.linkedin.com/in/patsonnyandoro">
@@ -57,42 +57,42 @@ export default class DevInfo extends Component {
           </Card>
         </Col>
         <Col lg="4" md="12">
-          <Card>
+          <Card className="bg-primary text-white">
             <CardBody>
-              <h3 className="font-large-1">Tech Skills</h3>
+              <h3 className="font-large-1 text-white">Tech Skills</h3>
               <hr className="my-1" />
               <ListGroup flush>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-react"></i>
                   </p>
                   <span className="font-mono">React</span>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-html5"></i>
                   </p>
                   <span className="font-mono">HTML</span>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-sass"></i>
                   </p>
                   <span className="font-mono">SASS</span>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-js-square"></i>
                   </p>
                   <span className="font-mono">JavaScript</span>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-python"></i>
                   </p>
                   <span className="font-mono">Python</span>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className="bg-primary text-white">
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-node"></i>
                   </p>
@@ -103,32 +103,36 @@ export default class DevInfo extends Component {
           </Card>
         </Col>
         <Col lg="4" md="6" sm="12">
-          <Card>
+          <Card className="bg-primary">
             <CardBody>
-              <h3 className="font-large-1">Services</h3>
+              <h3 className="font-large-1 text-white">Services</h3>
               <hr className="my-1" />
-              <ul class="list-inline font-large-1">
+              <ul class="list-inline font-large-1 text-white">
                 <li class="list-inline-item">
                   <Layout size="20" />
                 </li>
                 <li class="list-inline-item">
-                  <h3 className="mb-0 inline-block">&nbsp;Web Design</h3>
+                  <h3 className="mb-0 inline-block text-white">
+                    &nbsp;Web Design
+                  </h3>
                 </li>
               </ul>
-              <p className="font-mono">
+              <p className="font-mono text-white">
                 I design app and/or website layouts for computers &amp; mobile
                 devices, with a focus on maximizing usability and simplyfing the
                 user experience.
               </p>
-              <ul class="list-inline font-large-1">
+              <ul class="list-inline font-large-1 text-white">
                 <li class="list-inline-item">
                   <Terminal size="30" />
                 </li>
                 <li class="list-inline-item">
-                  <h3 className="mb-0 inline-block">&nbsp;Web Development</h3>
+                  <h3 className="mb-0 inline-block text-white">
+                    &nbsp;Web Development
+                  </h3>
                 </li>
               </ul>
-              <p className="font-mono">
+              <p className="font-mono text-white">
                 I can also build anything from a simple static web page to a
                 complex web-based internet application. All based on client
                 design specifications.
