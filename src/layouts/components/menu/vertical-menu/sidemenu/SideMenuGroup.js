@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import { Badge } from "reactstrap"
 import classnames from "classnames"
 import { ChevronRight } from "react-feather"
-import { FormattedMessage } from "react-intl"
-
 class SideMenuGroup extends React.Component {
   constructor(props) {
     super(props)
@@ -79,9 +77,7 @@ class SideMenuGroup extends React.Component {
                       ),
                       active:
                         (this.props.activeItemState === child.navLink &&
-                          child.type === "item") ||
-                        (item.parentOf &&
-                          item.parentOf.includes(this.props.activeItemState)),
+                        child.type === "item") || (item.parentOf && item.parentOf.includes(this.props.activeItemState)),
                       disabled: child.disabled
                     })}
                     onClick={e => {
@@ -90,18 +86,15 @@ class SideMenuGroup extends React.Component {
                       if (child.navLink && child.navLink !== undefined) {
                         handleActiveItem(child.navLink)
                       }
-                      if (
-                        this.props.deviceWidth <= 1200 &&
-                        child.type === "item"
-                      ) {
+                      if(this.props.deviceWidth <= 1200 && child.type === "item"){
                         this.props.toggleMenu()
                       }
-                    }}>
+                    }}
+                  >
                     <CustomAnchorTag
-                      className={classnames({
-                        "d-flex justify-content-between":
-                          child.type === "collapse"
-                      })}
+                    className={classnames({
+                      "d-flex justify-content-between" : child.type === "collapse"
+                    })}
                       to={
                         child.navLink && child.type === "item"
                           ? child.navLink
@@ -120,18 +113,20 @@ class SideMenuGroup extends React.Component {
                           ? e.preventDefault()
                           : ""
                       }}
-                      target={child.newTab ? "_blank" : undefined}>
+                      target={child.newTab ? "_blank" : undefined}
+                    >
                       <div className="menu-text">
                         {child.icon}
                         <span className="menu-item menu-title">
-                          <FormattedMessage id={child.title} />
+                          {child.title}
                         </span>
                       </div>
                       {child.badge ? (
                         <Badge
                           color={child.badge}
                           className="float-right mr-2"
-                          pill>
+                          pill
+                        >
                           {child.badgeText}
                         </Badge>
                       ) : (

@@ -2,8 +2,6 @@ import React from "react";
 import { X } from "react-feather";
 import { Input } from "reactstrap";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { connect } from "react-redux";
-import { changeStatus } from "../../../redux/actions/chat/index";
 import Radio from "../../../components/@dev/radio/RadioDev";
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg";
 class UserSidebar extends React.Component {
@@ -123,9 +121,5 @@ class UserSidebar extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    chat: state.chatApp.chats,
-  };
-};
-export default connect(mapStateToProps, { changeStatus })(UserSidebar);
+
+export default UserSidebar;

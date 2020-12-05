@@ -2,13 +2,6 @@ import React from "react";
 import { Card, FormGroup, Input, Badge } from "reactstrap";
 import { X, Search } from "react-feather";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { connect } from "react-redux";
-import {
-  getChats,
-  getContactChats,
-  searchContacts,
-  markSeenAllMessages,
-} from "../../../redux/actions/chat/index";
 
 class ChatSidebar extends React.Component {
   static getDerivedStateFromProps(props, state) {
@@ -213,14 +206,4 @@ class ChatSidebar extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    chat: state.chatApp.chats,
-  };
-};
-export default connect(mapStateToProps, {
-  getChats,
-  getContactChats,
-  searchContacts,
-  markSeenAllMessages,
-})(ChatSidebar);
+export default ChatSidebar;

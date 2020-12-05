@@ -25,24 +25,19 @@ class HorizontalLayout extends PureComponent {
     currentLang: "en",
     appOverlay: false,
     customizer: false,
+    isTouropen: false,
     currRoute: this.props.location.pathname,
     menuOpen: themeConfig.menuOpen,
   };
 
-  mounted = false;
-
   updateWidth = () => {
-    if (this.mounted) {
-      this.setState((prevState) => ({
-        width: window.innerWidth,
-      }));
-    }
+    this.setState((prevState) => ({
+      width: window.innerWidth,
+    }));
   };
 
   updateScroll = () => {
-    if (this.mounted) {
-      this.setState({ scroll: window.pageYOffset });
-    }
+    this.setState({ scroll: window.pageYOffset });
   };
 
   handleCustomizer = (bool) => {
@@ -52,49 +47,41 @@ class HorizontalLayout extends PureComponent {
   };
 
   componentDidMount() {
-    this.mounted = true;
-    if (this.mounted) {
-      if (window !== "undefined") {
-        window.addEventListener("resize", this.updateWidth, false);
-        window.addEventListener("scroll", this.updateScroll, false);
-      }
-      if (this.props.location.pathname === "/pages/profile") {
-        this.setState({
-          sidebarState: true,
-          collapsedContent: true,
-        });
-      }
-      let layout = this.props.app.customizer.theme;
-      return layout === "dark"
-        ? document.body.classList.add("dark-layout")
-        : layout === "semi-dark"
-        ? document.body.classList.add("semi-dark-layout")
-        : null;
+    if (window !== "undefined") {
+      window.addEventListener("resize", this.updateWidth, false);
+      window.addEventListener("scroll", this.updateScroll, false);
     }
+    if (this.props.location.pathname === "/pages/profile") {
+      this.setState({
+        sidebarState: true,
+        collapsedContent: true,
+      });
+    }
+    let layout = this.props.app.customizer.theme;
+    return layout === "dark"
+      ? document.body.classList.add("dark-layout")
+      : layout === "semi-dark"
+      ? document.body.classList.add("semi-dark-layout")
+      : null;
   }
 
   componentDidUpdate() {
-    if (this.mounted) {
-      if (this.state.currRoute !== this.props.location.pathname) {
-        this.handleRouteChange();
-        this.setState({
-          currRoute: this.props.location.pathname,
-        });
-      }
+    if (this.state.currRoute !== this.props.location.pathname) {
+      this.handleRouteChange();
+      this.setState({
+        currRoute: this.props.location.pathname,
+      });
+    }
 
-      let layout = this.props.app.customizer.theme;
-      if (layout === "dark") {
-        document.body.classList.remove("semi-dark-layout");
-        document.body.classList.add("dark-layout");
-      } else if (layout === "semi-dark") {
-        document.body.classList.remove("dark-layout");
-        document.body.classList.add("semi-dark-layout");
-      } else {
-        return document.body.classList.remove(
-          "dark-layout",
-          "semi-dark-layout"
-        );
-      }
+    let layout = this.props.app.customizer.theme;
+    if (layout === "dark") {
+      document.body.classList.remove("semi-dark-layout");
+      document.body.classList.add("dark-layout");
+    } else if (layout === "semi-dark") {
+      document.body.classList.remove("dark-layout");
+      document.body.classList.add("semi-dark-layout");
+    } else {
+      return document.body.classList.remove("dark-layout", "semi-dark-layout");
     }
   }
 
@@ -125,20 +112,16 @@ class HorizontalLayout extends PureComponent {
   };
 
   handleSidebarVisibility = () => {
-    if (this.mounted) {
-      if (window !== undefined) {
-        window.addEventListener("resize", () => {
-          if (this.state.sidebarHidden) {
-            this.setState({
-              sidebarHidden: !this.state.sidebarHidden,
-            });
-          }
+    window.addEventListener("resize", () => {
+      if (this.state.sidebarHidden) {
+        this.setState({
+          sidebarHidden: !this.state.sidebarHidden,
         });
       }
-      this.setState({
-        sidebarHidden: !this.state.sidebarHidden,
-      });
-    }
+    });
+    this.setState({
+      sidebarHidden: !this.state.sidebarHidden,
+    });
   };
 
   handleCurrentLanguage = (lang) => {
@@ -164,10 +147,6 @@ class HorizontalLayout extends PureComponent {
       appOverlay: false,
     });
   };
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
 
   render() {
     let customizerProps = this.props.app.customizer;

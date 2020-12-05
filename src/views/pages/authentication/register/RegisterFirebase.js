@@ -2,8 +2,6 @@ import React from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
-import { connect } from "react-redux";
-import { signupWithFirebase } from "../../../../redux/actions/auth/registerActions";
 import { history } from "../../../../history";
 class RegisterFirebase extends React.Component {
   state = {
@@ -89,11 +87,4 @@ class RegisterFirebase extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    values: state.auth.register,
-  };
-};
-export default connect(mapStateToProps, { signupWithFirebase })(
-  RegisterFirebase
-);
+export default RegisterFirebase;

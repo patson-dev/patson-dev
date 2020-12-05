@@ -5,7 +5,6 @@ import navigationConfig from "../../../../../configs/navigationConfig"
 import SideMenuGroup from "./SideMenuGroup"
 import { Badge } from "reactstrap"
 import { ChevronRight } from "react-feather"
-import { FormattedMessage } from "react-intl"
 import { history } from "../../../../../history"
 
 class SideMenuContent extends React.Component {
@@ -130,7 +129,8 @@ class SideMenuContent extends React.Component {
         return (
           <li
             className="navigation-header"
-            key={`group-header-${item.groupTitle}`}>
+            key={`group-header-${item.groupTitle}`}
+          >
             <span>{item.groupTitle}</span>
           </li>
         )
@@ -147,9 +147,7 @@ class SideMenuContent extends React.Component {
             hover: this.props.hoverIndex === item.id,
             active:
               (this.props.activeItemState === item.navLink &&
-                item.type === "item") ||
-              (item.parentOf &&
-                item.parentOf.includes(this.props.activeItemState)),
+              item.type === "item" )|| (item.parentOf && item.parentOf.includes(this.props.activeItemState)),
             disabled: item.disabled
           })}
           key={item.id}
@@ -158,21 +156,16 @@ class SideMenuContent extends React.Component {
             if (item.type === "item") {
               this.props.handleActiveItem(item.navLink)
               this.handleGroupClick(item.id, null, item.type)
-              if (this.props.deviceWidth <= 1200 && item.type === "item") {
+              if(this.props.deviceWidth <= 1200 && item.type === "item"){
                 this.props.toggleMenu()
               }
             } else {
               this.handleGroupClick(item.id, null, item.type)
             }
-          }}>
+          }}
+        >
           <CustomAnchorTag
-            to={
-              item.filterBase
-                ? item.filterBase
-                : item.navLink && item.type === "item"
-                ? item.navLink
-                : ""
-            }
+            to={item.filterBase ? item.filterBase : item.navLink && item.type === "item" ? item.navLink :  ""}
             href={item.type === "external-link" ? item.navLink : ""}
             className={`d-flex ${
               item.badgeText
@@ -189,12 +182,11 @@ class SideMenuContent extends React.Component {
             onClick={e => {
               return item.type === "collapse" ? e.preventDefault() : ""
             }}
-            target={item.newTab ? "_blank" : undefined}>
+            target={item.newTab ? "_blank" : undefined}
+          >
             <div className="menu-text">
               {item.icon}
-              <span className="menu-item menu-title">
-                <FormattedMessage id={item.title} />
-              </span>
+              <span className="menu-item menu-title">{item.title}</span>
             </div>
 
             {item.badge ? (
@@ -238,7 +230,7 @@ class SideMenuContent extends React.Component {
           )}
         </li>
       )
-
+      
       if (
         item.navLink &&
         item.collapsed !== undefined &&
@@ -249,8 +241,7 @@ class SideMenuContent extends React.Component {
       }
 
       if (
-        item.type === "collapse" ||
-        item.type === "external-link" ||
+        item.type === "collapse" || item.type === "external-link" ||
         (item.type === "item" &&
           item.permissions &&
           item.permissions.includes(this.props.currentUser)) ||

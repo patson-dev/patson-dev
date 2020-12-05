@@ -3,8 +3,6 @@ import ReactDOM from "react-dom"
 import { Input, Button } from "reactstrap"
 import { Menu, Star, Send } from "react-feather"
 import PerfectScrollbar from "react-perfect-scrollbar"
-import { connect } from "react-redux"
-import { togglePinned, sendMessage } from "../../../redux/actions/chat/index"
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
 
 class ChatLog extends React.Component {
@@ -278,9 +276,5 @@ class ChatLog extends React.Component {
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    chat: state.chatApp.chats
-  }
-}
-export default connect(mapStateToProps, { togglePinned, sendMessage })(ChatLog)
+
+export default ChatLog;

@@ -1,6 +1,5 @@
 import React from "react";
-
-class CheckBoxesDev extends React.Component {
+class CheckboxesDev extends React.Component {
   render() {
     return (
       <div
@@ -30,4 +29,4 @@ class CheckBoxesDev extends React.Component {
   }
 }
 
-export default CheckBoxesDev;
+export default CheckboxesDev;

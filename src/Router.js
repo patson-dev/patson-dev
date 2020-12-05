@@ -157,26 +157,6 @@ const apex = lazy(() => import("./views/charts/apex/ApexCharts"));
 const chartjs = lazy(() => import("./views/charts/chart-js/ChartJS"));
 const extreme = lazy(() => import("./views/charts/recharts/Recharts"));
 const leafletMaps = lazy(() => import("./views/maps/Maps"));
-const toastr = lazy(() => import("./extensions/toastify/Toastify"));
-const sweetAlert = lazy(() => import("./extensions/sweet-alert/SweetAlert"));
-const rcSlider = lazy(() => import("./extensions/rc-slider/Slider"));
-const uploader = lazy(() => import("./extensions/dropzone/Dropzone"));
-const editor = lazy(() => import("./extensions/editor/Editor"));
-const drop = lazy(() => import("./extensions/drag-and-drop/DragAndDrop"));
-const tour = lazy(() => import("./extensions/tour/Tour"));
-const clipboard = lazy(() =>
-  import("./extensions/copy-to-clipboard/CopyToClipboard")
-);
-const menu = lazy(() => import("./extensions/contexify/Contexify"));
-const swiper = lazy(() => import("./extensions/swiper/Swiper"));
-const i18n = lazy(() => import("./extensions/i18n/I18n"));
-const reactPaginate = lazy(() => import("./extensions/pagination/Pagination"));
-const tree = lazy(() => import("./extensions/treeview/TreeView"));
-const Import = lazy(() => import("./extensions/import-export/Import"));
-const Export = lazy(() => import("./extensions/import-export/Export"));
-const ExportSelected = lazy(() =>
-  import("./extensions/import-export/ExportSelected")
-);
 const userList = lazy(() => import("./views/apps/user/list/List"));
 const userEdit = lazy(() => import("./views/apps/user/edit/Edit"));
 const userView = lazy(() => import("./views/apps/user/view/View"));
@@ -192,9 +172,6 @@ const resetPassword = lazy(() =>
 );
 const register = lazy(() =>
   import("./views/pages/authentication/register/Register")
-);
-const accessControl = lazy(() =>
-  import("./extensions/access-control/AccessControl")
 );
 // Set Layout and Component Using App Route
 const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
@@ -373,29 +350,6 @@ class AppRouter extends React.Component {
           <AppRoute path="/charts/chartjs" component={chartjs} />
           <AppRoute path="/charts/recharts" component={extreme} />
           <AppRoute path="/maps/leaflet" component={leafletMaps} />
-          <AppRoute path="/extensions/sweet-alert" component={sweetAlert} />
-          <AppRoute path="/extensions/toastr" component={toastr} />
-          <AppRoute path="/extensions/slider" component={rcSlider} />
-          <AppRoute path="/extensions/file-uploader" component={uploader} />
-          <AppRoute path="/extensions/wysiwyg-editor" component={editor} />
-          <AppRoute path="/extensions/drag-and-drop" component={drop} />
-          <AppRoute path="/extensions/tour" component={tour} />
-          <AppRoute path="/extensions/clipboard" component={clipboard} />
-          <AppRoute path="/extensions/context-menu" component={menu} />
-          <AppRoute path="/extensions/swiper" component={swiper} />
-          <AppRoute
-            path="/extensions/access-control"
-            component={accessControl}
-          />
-          <AppRoute path="/extensions/i18n" component={i18n} />
-          <AppRoute path="/extensions/tree" component={tree} />
-          <AppRoute path="/extensions/import" component={Import} />
-          <AppRoute path="/extensions/export" component={Export} />
-          <AppRoute
-            path="/extensions/export-selected"
-            component={ExportSelected}
-          />
-          <AppRoute path="/extensions/pagination" component={reactPaginate} />
           <AppRoute component={error404} />
         </Switch>
       </Router>

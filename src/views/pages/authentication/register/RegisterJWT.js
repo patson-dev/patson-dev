@@ -2,8 +2,6 @@ import React from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
-import { connect } from "react-redux";
-import { signupWithJWT } from "../../../../redux/actions/auth/registerActions";
 import { history } from "../../../../history";
 
 class RegisterJWT extends React.Component {
@@ -92,9 +90,4 @@ class RegisterJWT extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    values: state.auth.register,
-  };
-};
-export default connect(mapStateToProps, { signupWithJWT })(RegisterJWT);
+export default RegisterJWT;

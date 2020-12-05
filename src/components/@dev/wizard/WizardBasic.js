@@ -1,7 +1,7 @@
 import React from "react";
 import Wizard from "./WizardComponent";
 import {
-  // Form,
+  Form,
   FormGroup,
   Input,
   Label,
@@ -12,16 +12,16 @@ import {
   CardBody,
   CardTitle,
   CardHeader,
-  // Button
+  Button,
 } from "reactstrap";
-import Checkbox from "../checkbox/CheckBoxesDev";
+import Checkbox from "../checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 class WizardBasic extends React.Component {
   state = {
-    steps: [
-      {
-        title: 1,
-        content: (
+    activeStep: 0,
+    steps: {
+      step_1: (
+        <Form className="form-horizontal">
           <Row>
             <Col md="6" sm="12">
               <FormGroup>
@@ -53,11 +53,18 @@ class WizardBasic extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-        ),
-      },
-      {
-        title: 2,
-        content: (
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" disabled>
+              Prev
+            </Button>
+            <Button color="primary" onClick={() => this.handleActiveStep(1)}>
+              Next
+            </Button>
+          </div>
+        </Form>
+      ),
+      step_2: (
+        <Form className="form-horizontal">
           <Row>
             <Col md="6" sm="12">
               <FormGroup>
@@ -76,11 +83,18 @@ class WizardBasic extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-        ),
-      },
-      {
-        title: 3,
-        content: (
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" onClick={() => this.handleActiveStep(0)}>
+              Prev
+            </Button>
+            <Button color="primary" onClick={() => this.handleActiveStep(2)}>
+              Next
+            </Button>
+          </div>
+        </Form>
+      ),
+      step_3: (
+        <Form className="form-horizontal">
           <Row>
             <Col md="6" sm="12">
               <FormGroup>
@@ -134,9 +148,23 @@ class WizardBasic extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-        ),
-      },
-    ],
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" onClick={() => this.handleActiveStep(1)}>
+              Prev
+            </Button>
+            <Button color="primary" onClick={() => alert("Form Submitted")}>
+              Submit
+            </Button>
+          </div>
+        </Form>
+      ),
+    },
+  };
+
+  handleActiveStep = (step) => {
+    this.setState({
+      activeStep: step,
+    });
   };
 
   render() {
@@ -148,10 +176,10 @@ class WizardBasic extends React.Component {
         </CardHeader>
         <CardBody>
           <Wizard
-            enableAllSteps
-            onFinish={() => alert("submitted")}
-            steps={steps}
-          />
+            activeStep={this.state.activeStep}
+            stepsTitle={[1, 2, 3]}
+            stepsContent={[steps.step_1, steps.step_2, steps.step_3]}
+          ></Wizard>
         </CardBody>
       </Card>
     );

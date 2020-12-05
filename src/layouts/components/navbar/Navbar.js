@@ -1,19 +1,14 @@
-import React from "react";
-import { Navbar } from "reactstrap";
-import { connect } from "react-redux";
-import classnames from "classnames";
-import { useAuth0 } from "../../../authServices/auth0/auth0Service";
-import {
-  logoutWithJWT,
-  logoutWithFirebase,
-} from "../../../redux/actions/auth/loginActions";
-import NavbarBookmarks from "./NavbarBookmarks";
-import ContactDev from "../../../views/pages/home/ContactDev";
+import React from "react"
+import { Navbar } from "reactstrap"
+import classnames from "classnames"
+import NavbarBookmarks from "./NavbarBookmarks"
+import NavbarUser from "./NavbarUser"
+import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
 
 
-const ThemeNavbar = (props) => {
-  const colorsArr = ["primary", "danger", "success", "info", "warning", "dark"];
-  const navbarTypes = ["floating", "static", "sticky", "hidden"];
+const ThemeNavbar = props => {
+  const colorsArr = [ "primary", "danger", "success", "info", "warning", "dark"]
+  const navbarTypes = ["floating" , "static" , "sticky" , "hidden"]
   return (
     <React.Fragment>
       <div className="content-overlay" />
@@ -22,9 +17,7 @@ const ThemeNavbar = (props) => {
         className={classnames(
           "header-navbar navbar-expand-lg navbar navbar-with-menu navbar-shadow",
           {
-            "navbar-light":
-              props.navbarColor === "default" ||
-              !colorsArr.includes(props.navbarColor),
+            "navbar-light": props.navbarColor === "default" || !colorsArr.includes(props.navbarColor),
             "navbar-dark": colorsArr.includes(props.navbarColor),
             "bg-primary":
               props.navbarColor === "primary" && props.navbarType !== "static",
@@ -40,12 +33,12 @@ const ThemeNavbar = (props) => {
               props.navbarColor === "dark" && props.navbarType !== "static",
             "d-none": props.navbarType === "hidden" && !props.horizontal,
             "floating-nav":
-              (props.navbarType === "floating" && !props.horizontal) ||
-              (!navbarTypes.includes(props.navbarType) && !props.horizontal),
+              (props.navbarType === "floating" && !props.horizontal) || (!navbarTypes.includes(props.navbarType) && !props.horizontal),
             "navbar-static-top":
               props.navbarType === "static" && !props.horizontal,
             "fixed-top": props.navbarType === "sticky" || props.horizontal,
-            scrolling: props.horizontal && props.scrolling,
+            "scrolling": props.horizontal && props.scrolling
+
           }
         )}
       >
@@ -67,23 +60,19 @@ const ThemeNavbar = (props) => {
                   <h2 className="text-primary brand-text mb-0">Vuexy</h2>
                 </div>
               ) : null}
-              <ContactDev />
+              <NavbarUser
+                handleAppOverlay={props.handleAppOverlay}
+                changeCurrentLang={props.changeCurrentLang}
+                userName="John Doe"
+                userImg={ userImg }
+              />
             </div>
           </div>
         </div>
       </Navbar>
     </React.Fragment>
-  );
-};
+  )
+}
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.auth,
-  };
-};
 
-export default connect(mapStateToProps, {
-  logoutWithJWT,
-  logoutWithFirebase,
-  useAuth0,
-})(ThemeNavbar);
+export default ThemeNavbar

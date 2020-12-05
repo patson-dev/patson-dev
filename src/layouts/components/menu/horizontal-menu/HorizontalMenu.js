@@ -9,7 +9,6 @@ import classnames from "classnames"
 import { ChevronDown, ChevronRight } from "react-feather"
 import { Link } from "react-router-dom"
 import { connect } from "react-redux"
-import { FormattedMessage } from "react-intl"
 import { history } from "../../../../history"
 import navigationConfig from "../../../../configs/horizontalMenuConfig"
 class HorizontalSidebar extends React.Component {
@@ -36,7 +35,7 @@ class HorizontalSidebar extends React.Component {
   openDropdown = id => {
     let arr = this.state.openDropdown
     if (!arr.includes(id)) arr.push(id)
-    return this.setState({
+    this.setState({
       openDropdown: arr
     })
   }
@@ -44,7 +43,7 @@ class HorizontalSidebar extends React.Component {
   closeDropdown = id => {
     let arr = this.state.openDropdown
     arr.splice(arr.indexOf(id), 1)
-    return this.setState({
+    this.setState({
       openDropdown: arr
     })
   }
@@ -60,6 +59,7 @@ class HorizontalSidebar extends React.Component {
       parentHover: id
     })
   }
+
 
   componentDidMount() {
     this.handleActiveParent(this.activeParentItems)
@@ -126,7 +126,8 @@ class HorizontalSidebar extends React.Component {
               }
             }
           }
-        }}>
+        }}
+      >
         {submenu.map(child => {
           const CustomAnchorTag = child.type === "external-link" ? `a` : Link
           if (child.navLink && child.navLink === this.props.activePath) {
@@ -139,16 +140,15 @@ class HorizontalSidebar extends React.Component {
               <li
                 className={classnames({
                   active: this.state.activeParents.includes(child.id)
-                })}>
+                })}
+              >
                 <DropdownItem
                   className={classnames("w-100", {
                     hover: this.state.itemHover === child.id,
                     "has-sub": child.children,
                     active:
-                      (child.parentOf &&
-                        child.parentOf.includes(this.props.activePath)) ||
-                      (child.navLink &&
-                        child.navLink === this.props.activePath),
+                      (child.parentOf && child.parentOf.includes(this.props.activePath) )|| 
+                      (child.navLink && child.navLink === this.props.activePath),
                     "has-active-child": this.state.openDropdown.includes(
                       child.id
                     ),
@@ -156,18 +156,16 @@ class HorizontalSidebar extends React.Component {
                   })}
                   tag={child.navLink ? CustomAnchorTag : "div"}
                   to={
-                    child.filterBase
-                      ? child.filterBase
-                      : child.navLink && child.type === "item"
-                      ? child.navLink
-                      : "#"
+                    child.filterBase ? child.filterBase :
+                    child.navLink && child.type === "item" ? child.navLink : "#"
                   }
                   href={
                     child.type === "external-link" ? child.navLink : undefined
                   }
                   target={child.newTab ? "_blank" : undefined}
                   onMouseEnter={() => this.handleItemHover(child.id)}
-                  onMouseLeave={() => this.handleItemHover(null)}>
+                  onMouseLeave={() => this.handleItemHover(null)}
+                >
                   {child.children ? (
                     <Dropdown
                       className={classnames("sub-menu w-100", {})}
@@ -175,19 +173,22 @@ class HorizontalSidebar extends React.Component {
                       direction={this.state.openLeft ? "left" : "right"}
                       toggle={() => true}
                       onMouseEnter={() => this.openDropdown(child.id)}
-                      onMouseLeave={() => this.closeDropdown(child.id)}>
+                      onMouseLeave={() => this.closeDropdown(child.id)}
+                    >
                       <DropdownToggle
                         className="d-flex justify-content-between align-items-center item-content"
                         tag={"div"}
-                        onClick={() => this.closeDropdown(child.id)}>
+                        onClick={() => this.closeDropdown(child.id)}
+                      >
                         <div className="dropdown-toggle-sub text-truncate">
                           <span className="menu-icon align-bottom mr-1">
                             {child.icon}
                           </span>
-                          <FormattedMessage
+                          <span
                             className="menu-title align-middle"
-                            id={child.title}
-                          />
+                          >
+                            {child.title}
+                          </span>
                         </div>
                         <ChevronRight
                           className="has-sub-arrow align-middle ml-50"
@@ -204,7 +205,7 @@ class HorizontalSidebar extends React.Component {
                         {child.icon}
                       </span>
                       <span className="menu-title align-middle">
-                        <FormattedMessage id={child.title} />
+                        {child.title}
                       </span>
                     </div>
                   )}
@@ -214,12 +215,11 @@ class HorizontalSidebar extends React.Component {
           )
 
           if (
-            child.type === "external-link" ||
-            (child.type === "item" &&
+            (child.type === "external-link" || (child.type === "item" &&
               child.permissions &&
-              child.permissions.includes(this.props.currentUser)) ||
-            child.type === "dropdown" ||
-            child.permissions === undefined
+              child.permissions.includes(this.props.currentUser))) ||
+            (child.type === "dropdown" ||
+            child.permissions === undefined)
           ) {
             return renderChildItems
           } else if (
@@ -237,11 +237,7 @@ class HorizontalSidebar extends React.Component {
 
   renderDropdown = arr => {
     return arr.map(item => {
-      if (
-        item.type === "item" &&
-        item.navLink &&
-        item.navLink === this.props.activePath
-      ) {
+      if (item.type === "item" && item.navLink && item.navLink === this.props.activePath) {
         this.activeFlag = true
         this.updateParentItems(item.id, true)
       }
@@ -253,10 +249,11 @@ class HorizontalSidebar extends React.Component {
             hover: this.state.parentHover === item.id
           })}
           key={item.id}
-          ref={el => (this.menuDrodpown = el)}>
+          ref={el => (this.menuDrodpown = el)}
+        >
           <div
             className={classnames("nav-item-wrapper cursor-pointer", {
-              "single-item": item.type === "item"
+              "single-item" : item.type === "item"
             })}
             onMouseEnter={() => {
               this.openDropdown(item.id)
@@ -265,58 +262,51 @@ class HorizontalSidebar extends React.Component {
             onMouseLeave={() => {
               this.closeDropdown(item.id)
               this.handleParentHover(null)
-            }}>
-            {item.children ? (
-              <Dropdown
-                isOpen={this.state.openDropdown.includes(item.id)}
-                className="nav-link"
-                toggle={() => this.openDropdown(item.id)}>
-                <DropdownToggle className="d-flex align-items-center" tag="div">
-                  <div className="dropdown-text">
-                    <span className="menu-icon align-middle mr-75">
-                      {item.icon}
-                    </span>
-                    <span className="menu-title align-middle">
-                      <FormattedMessage
-                        className="menu-title align-middle"
-                        id={item.title}
-                      />
-                    </span>
-                  </div>
-                  <ChevronDown className="ml-50 align-bottom" size={15} />
-                </DropdownToggle>
+            }}
+          >
+           {item.children ?  <Dropdown
+              isOpen={this.state.openDropdown.includes(item.id)}
+              className="nav-link"
+              toggle={() => this.openDropdown(item.id)}
+            >
+              <DropdownToggle className="d-flex align-items-center" tag="div">
+                <div className="dropdown-text">
+                  <span className="menu-icon align-middle mr-75">
+                    {item.icon}
+                  </span>
+                  <span className="menu-title align-middle">
+                    {item.title}
+                  </span>
+                </div>
+                <ChevronDown className="ml-50 align-bottom" size={15} />
+              </DropdownToggle>
 
-                {this.updateParentItems(item.id, true)}
-                {item.children
-                  ? this.renderSubMenu(item.children, item.id)
-                  : null}
-              </Dropdown>
-            ) : (
-              <CustomAnchorTag
-                className={classnames({
-                  "nav-link": item.type === "item",
-                  hover: this.state.parentHover === item.id
-                })}
-                to={
-                  item.filterBase
-                    ? item.filterBase
-                    : item.navLink && item.type === "item"
-                    ? item.navLink
-                    : "#"
-                }
-                href={item.type === "external-link" ? item.navLink : undefined}
-                target={item.newTab ? "_blank" : undefined}>
-                <span className="menu-icon align-middle mr-75">
-                  {item.icon}
+              {this.updateParentItems(item.id, true)}
+              {item.children
+                ? this.renderSubMenu(item.children, item.id)
+                : null}
+            </Dropdown> : (
+            <CustomAnchorTag
+              className={classnames({
+                "nav-link": item.type === "item",
+                hover: this.state.parentHover === item.id
+              })}
+              to={
+                item.filterBase ? item.filterBase :
+                item.navLink && item.type === "item" ? item.navLink : "#"
+              }
+              href={ item.type === "external-link" ? item.navLink : undefined }
+              target={item.newTab ? "_blank" : undefined}
+              > 
+              <span className="menu-icon align-middle mr-75">
+                {item.icon}
+              </span>
+              <span className="menu-title align-middle">
+                  {item.title}
                 </span>
-                <span className="menu-title align-middle">
-                  <FormattedMessage
-                    className="menu-title align-middle"
-                    id={item.title}
-                  />
-                </span>
-              </CustomAnchorTag>
-            )}
+            </CustomAnchorTag>)
+               
+            }
           </div>
         </li>
       )
@@ -332,13 +322,10 @@ class HorizontalSidebar extends React.Component {
             {
               "navbar-static": this.props.navbarType === "static",
               "fixed-top": this.props.navbarType === "sticky",
-              "floating-nav":
-                this.props.navbarType === "floating" ||
-                !["static", "sticky", "floating"].includes(
-                  this.props.navbarType
-                )
+              "floating-nav": this.props.navbarType === "floating" || !["static", "sticky", "floating"].includes(this.props.navbarType)
             }
-          )}>
+          )}
+        >
           <div className="navbar-container main-menu-content">
             <ul className="nav navbar-nav" id="main-menu-navigation">
               {this.renderDropdown(navigationConfig)}

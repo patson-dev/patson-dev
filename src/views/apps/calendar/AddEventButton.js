@@ -1,11 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
 import { PlusSquare } from "react-feather";
-import { connect } from "react-redux";
-import {
-  handleSidebar,
-  handleSelectedEvent,
-} from "../../../redux/actions/calendar/index";
 const AddEventButton = (props) => {
   return (
     <Button.Ripple
@@ -23,6 +18,4 @@ const AddEventButton = (props) => {
   );
 };
 
-export default connect(null, { handleSidebar, handleSelectedEvent })(
-  AddEventButton
-);
+export default AddEventButton;

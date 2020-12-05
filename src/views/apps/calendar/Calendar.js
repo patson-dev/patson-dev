@@ -5,16 +5,6 @@ import { Card, CardBody, Button, ButtonGroup } from "reactstrap"
 import { Calendar, momentLocalizer } from "react-big-calendar"
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop"
 import moment from "moment"
-import { connect } from "react-redux"
-import {
-  fetchEvents,
-  handleSidebar,
-  addEvent,
-  handleSelectedEvent,
-  updateEvent,
-  updateDrag,
-  updateResize
-} from "../../../redux/actions/calendar/index"
 import { ChevronLeft, ChevronRight } from "react-feather"
 
 import "react-big-calendar/lib/addons/dragAndDrop/styles.scss"
@@ -263,18 +253,4 @@ class CalendarApp extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    app: state.calendar
-  }
-}
-
-export default connect(mapStateToProps, {
-  fetchEvents,
-  handleSidebar,
-  addEvent,
-  handleSelectedEvent,
-  updateEvent,
-  updateDrag,
-  updateResize
-})(CalendarApp)
+export default CalendarApp;

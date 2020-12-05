@@ -1,6 +1,7 @@
 import React from "react";
 import Wizard from "./WizardComponent";
 import {
+  AvForm,
   AvInput,
   AvGroup,
   AvFeedback,
@@ -14,15 +15,19 @@ import {
   CardBody,
   CardTitle,
   CardHeader,
+  Button,
 } from "reactstrap";
-import Checkbox from "../checkbox/CheckBoxesDev";
+import Checkbox from "../checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 class WizardValidation extends React.Component {
   state = {
-    steps: [
-      {
-        title: 1,
-        content: (
+    activeStep: 0,
+    steps: {
+      step_1: (
+        <AvForm
+          className="form-horizontal"
+          onSubmit={(e, errors) => this.handleActiveStep(1, errors)}
+        >
           <Row>
             <Col md="6" sm="12">
               <AvGroup>
@@ -53,7 +58,7 @@ class WizardValidation extends React.Component {
                   label="City Name"
                   required
                 >
-                  <option defaultValue>Select City</option>
+                  <option selected>Select City</option>
                   <option>New York</option>
                   <option>Chicago</option>
                   <option>San Francisco</option>
@@ -62,11 +67,19 @@ class WizardValidation extends React.Component {
               </AvGroup>
             </Col>
           </Row>
-        ),
-      },
-      {
-        title: 2,
-        content: (
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" disabled>
+              Prev
+            </Button>
+            <Button color="primary">Next</Button>
+          </div>
+        </AvForm>
+      ),
+      step_2: (
+        <AvForm
+          className="form-horizontal"
+          onSubmit={(e, errors) => this.handleActiveStep(2, errors)}
+        >
           <Row>
             <Col md="6" sm="12">
               <AvGroup>
@@ -88,11 +101,21 @@ class WizardValidation extends React.Component {
               </AvGroup>
             </Col>
           </Row>
-        ),
-      },
-      {
-        title: 3,
-        content: (
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" onClick={() => this.handleActiveStep(0)}>
+              Prev
+            </Button>
+            <Button color="primary">Next</Button>
+          </div>
+        </AvForm>
+      ),
+      step_3: (
+        <AvForm
+          className="form-horizontal"
+          onSubmit={(e, errors) =>
+            errors.length === 0 && alert("Form Submitted")
+          }
+        >
           <Row>
             <Col md="6" sm="12">
               <AvGroup>
@@ -109,7 +132,7 @@ class WizardValidation extends React.Component {
                   label="City Name"
                   required
                 >
-                  <option defaultValue>Select City</option>
+                  <option selected>Select City</option>
                   <option>New York</option>
                   <option>Chicago</option>
                   <option>San Francisco</option>
@@ -156,9 +179,23 @@ class WizardValidation extends React.Component {
               </AvGroup>
             </Col>
           </Row>
-        ),
-      },
-    ],
+          <div className="wizard-actions d-flex justify-content-between">
+            <Button color="primary" onClick={() => this.handleActiveStep(1)}>
+              Prev
+            </Button>
+            <Button color="primary">Submit</Button>
+          </div>
+        </AvForm>
+      ),
+    },
+  };
+
+  handleActiveStep = (step, errors) => {
+    if (errors.length <= 0) {
+      this.setState({
+        activeStep: step,
+      });
+    }
   };
 
   render() {
@@ -169,7 +206,11 @@ class WizardValidation extends React.Component {
           <CardTitle>Wizard with Validation</CardTitle>
         </CardHeader>
         <CardBody>
-          <Wizard validate steps={steps} />
+          <Wizard
+            activeStep={this.state.activeStep}
+            stepsTitle={[1, 2, 3]}
+            stepsContent={[steps.step_1, steps.step_2, steps.step_3]}
+          ></Wizard>
         </CardBody>
       </Card>
     );
