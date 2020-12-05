@@ -1,5 +1,6 @@
-import React from "react"
-class CheckBoxesVuexy extends React.Component {
+import React from "react";
+
+class CheckBoxesDev extends React.Component {
   render() {
     return (
       <div
@@ -25,8 +26,8 @@ class CheckBoxesVuexy extends React.Component {
         </span>
         <span>{this.props.label}</span>
       </div>
-    )
+    );
   }
 }
 
-export default CheckBoxesVuexy
+export default CheckBoxesDev;

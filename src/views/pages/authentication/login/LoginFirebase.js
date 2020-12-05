@@ -1,17 +1,9 @@
 import React from "react";
 import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap";
 import { Link } from "react-router-dom";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
-import { Mail, Lock, Check} from "react-feather";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
+import { Mail, Lock, Check } from "react-feather";
 import { history } from "../../../../history";
-import { connect } from "react-redux";
-import {
-  submitLoginWithFireBase,
-  loginWithFB,
-  loginWithTwitter,
-  loginWithGoogle,
-  loginWithGithub,
-} from "../../../../redux/actions/auth/loginActions";
 
 class LoginFirebase extends React.Component {
   state = {
@@ -99,16 +91,4 @@ class LoginFirebase extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    values: state.auth.login,
-  };
-};
-
-export default connect(mapStateToProps, {
-  submitLoginWithFireBase,
-  loginWithFB,
-  loginWithTwitter,
-  loginWithGoogle,
-  loginWithGithub,
-})(LoginFirebase);
+export default LoginFirebase;

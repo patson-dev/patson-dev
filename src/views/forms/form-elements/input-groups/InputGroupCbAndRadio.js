@@ -19,7 +19,7 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import { Eye, Code, Check } from "react-feather";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import Radio from "../../../../components/@dev/radio/RadioDev";
 import { inputGroupCBRadio } from "./InputGroupSourceCode";
 

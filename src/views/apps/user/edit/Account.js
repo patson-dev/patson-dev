@@ -11,7 +11,7 @@ import {
   Table,
 } from "reactstrap";
 import userImg from "../../../../assets/img/portrait/small/avatar-s-18.jpg";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check, Lock } from "react-feather";
 class UserAccountTab extends React.Component {
   render() {

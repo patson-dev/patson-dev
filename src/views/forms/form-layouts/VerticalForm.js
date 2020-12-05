@@ -13,7 +13,7 @@ import {
   Label,
 } from "reactstrap";
 
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 
 class VerticalForm extends React.Component {

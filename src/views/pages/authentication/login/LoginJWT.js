@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Mail, Lock, Check } from "react-feather";
-import { loginWithJWT } from "../../../../redux/actions/auth/loginActions";
-import { connect } from "react-redux";
 import { history } from "../../../../history";
 
 class LoginJWT extends React.Component {
@@ -81,9 +79,4 @@ class LoginJWT extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    values: state.auth.login,
-  };
-};
-export default connect(mapStateToProps, { loginWithJWT })(LoginJWT);
+export default LoginJWT;

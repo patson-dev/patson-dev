@@ -18,7 +18,7 @@ import {
 import classnames from "classnames";
 import XLSX from "xlsx";
 import { Check, Minus, Search } from "react-feather";
-import Checkbox from "../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../components/@dev/checkbox/CheckBoxesDev";
 
 import "../../assets/scss/pages/import-export.scss";
 class Export extends React.Component {

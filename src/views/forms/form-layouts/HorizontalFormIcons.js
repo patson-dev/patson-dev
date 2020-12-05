@@ -11,7 +11,7 @@ import {
   Button,
 } from "reactstrap";
 
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 import { Check, User, Mail, Smartphone, Lock } from "react-feather";
 
 class HorizontalFormIcons extends React.Component {

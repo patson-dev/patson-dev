@@ -33,7 +33,7 @@ import {
   unreadMails,
   setLabel,
 } from "../../../redux/actions/email/index";
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 import EmailDetails from "./EmailDetails";
 
 class EmailList extends React.Component {

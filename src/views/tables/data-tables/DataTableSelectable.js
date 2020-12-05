@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 import DataTable from "react-data-table-component";
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 
 const columns = [

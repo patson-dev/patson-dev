@@ -9,7 +9,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 import { X, Info, Star, Tag, Check } from "react-feather";
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { connect } from "react-redux";
 import {

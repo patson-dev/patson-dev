@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check, MessageSquare, X, Paperclip, Bold } from "react-feather";
 
 class CheckboxIcon extends React.Component {

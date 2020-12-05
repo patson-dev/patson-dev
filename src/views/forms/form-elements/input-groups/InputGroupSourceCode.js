@@ -71,7 +71,7 @@ import {
   Col
 } from "reactstrap"
 import { Check } from "react-feather"
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy"
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev"
 import Radio from "../../../../components/@dev/radio/RadioDev"
 
   class InputGroupCBRadio extends React.Component {

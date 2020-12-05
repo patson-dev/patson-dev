@@ -11,7 +11,7 @@ import {
   trashTask,
   searchTask,
 } from "../../../redux/actions/todo/index";
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 class TodoList extends React.Component {
   static getDerivedStateFromProps(props, state) {
     if (props.app.todo.routeParam !== state.currentLocation) {

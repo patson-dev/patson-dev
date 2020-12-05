@@ -3,7 +3,7 @@ import { Card, CardBody, Button } from "reactstrap";
 import Slider from "rc-slider";
 import { Check } from "react-feather";
 import Radio from "../../../../components/@dev/radio/RadioDev";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import "rc-slider/assets/index.css";
 
 import "../../../../assets/scss/plugins/extensions/slider.scss";

@@ -32,7 +32,7 @@ import {
 } from "../../../redux/actions/data-list/";
 import Sidebar from "./DataListSidebar";
 import Chip from "../../../components/@dev/chips/ChipComponent";
-import Checkbox from "../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../components/@dev/checkbox/CheckboxesDev";
 
 import "../../../assets/scss/plugins/extensions/react-paginate.scss";
 import "../../../assets/scss/pages/data-list.scss";

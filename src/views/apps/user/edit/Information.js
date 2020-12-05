@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button, Form, Input, Label, FormGroup } from "reactstrap";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import Radio from "../../../../components/@dev/radio/RadioDev";
 import { Check, User, MapPin } from "react-feather";
 import Select from "react-select";

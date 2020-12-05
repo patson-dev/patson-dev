@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-import Checkbox from "../../../../components/@dev/checkbox/CheckboxesVuexy";
+import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 import { connect } from "react-redux";
 import { signupWithJWT } from "../../../../redux/actions/auth/registerActions";
