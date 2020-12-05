@@ -130,7 +130,6 @@ const navigationConfig = [
         title: "Alerts",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/alerts",
       },
       {
@@ -138,7 +137,6 @@ const navigationConfig = [
         title: "Buttons",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/buttons",
       },
       {
@@ -146,7 +144,6 @@ const navigationConfig = [
         title: "Breadcrumbs",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/breadcrumbs",
       },
       {
@@ -154,7 +151,6 @@ const navigationConfig = [
         title: "Carousel",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/carousel",
       },
       {
@@ -162,7 +158,6 @@ const navigationConfig = [
         title: "Collapse",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/collapse",
       },
       {
@@ -170,7 +165,6 @@ const navigationConfig = [
         title: "Dropdowns",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/dropdowns",
       },
       {
@@ -178,7 +172,6 @@ const navigationConfig = [
         title: "List Group",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/list-group",
       },
       {
@@ -186,7 +179,6 @@ const navigationConfig = [
         title: "Modals",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/modals",
       },
       {
@@ -194,7 +186,6 @@ const navigationConfig = [
         title: "Pagination",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/pagination",
       },
       {
@@ -202,7 +193,6 @@ const navigationConfig = [
         title: "Navs Component",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/nav-component",
       },
       {
@@ -210,7 +200,6 @@ const navigationConfig = [
         title: "Navbar",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/navbar",
       },
       {
@@ -218,7 +207,6 @@ const navigationConfig = [
         title: "Tabs Component",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/tabs-component",
       },
       {
@@ -226,7 +214,6 @@ const navigationConfig = [
         title: "Pills Component",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/pills-component",
       },
       {
@@ -234,7 +221,6 @@ const navigationConfig = [
         title: "Tooltips",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/tooltips",
       },
       {
@@ -242,7 +228,6 @@ const navigationConfig = [
         title: "Popovers",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/popovers",
       },
       {
@@ -250,7 +235,6 @@ const navigationConfig = [
         title: "Badges",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/badges",
       },
       {
@@ -258,7 +242,6 @@ const navigationConfig = [
         title: "Pill Badges",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/pill-badges",
       },
       {
@@ -266,7 +249,6 @@ const navigationConfig = [
         title: "Progress",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/progress",
       },
       {
@@ -274,7 +256,6 @@ const navigationConfig = [
         title: "Media Objects",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/media-objects",
       },
       {
@@ -282,7 +263,6 @@ const navigationConfig = [
         title: "Spinners",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/spinners",
       },
       {
@@ -290,7 +270,6 @@ const navigationConfig = [
         title: "Toasts",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/components/toasts",
       },
     ],
@@ -306,7 +285,6 @@ const navigationConfig = [
         title: "Select",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/select",
       },
       {
@@ -314,7 +292,6 @@ const navigationConfig = [
         title: "Switch",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/switch",
       },
       {
@@ -322,7 +299,6 @@ const navigationConfig = [
         title: "Checkbox",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/checkbox",
       },
       {
@@ -330,7 +306,6 @@ const navigationConfig = [
         title: "Radio",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/radio",
       },
       {
@@ -338,7 +313,6 @@ const navigationConfig = [
         title: "Input",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/input",
       },
       {
@@ -346,7 +320,6 @@ const navigationConfig = [
         title: "Input Group",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/input-group",
       },
       {
@@ -354,7 +327,6 @@ const navigationConfig = [
         title: "Number Input",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/number-input",
       },
       {
@@ -362,7 +334,6 @@ const navigationConfig = [
         title: "Textarea",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/textarea",
       },
       {
@@ -370,7 +341,6 @@ const navigationConfig = [
         title: "Date & Time Picker",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/pickers",
       },
       {
@@ -378,7 +348,6 @@ const navigationConfig = [
         title: "Input Mask",
         type: "item",
         icon: <Icon.Circle size={12} />,
-        permissions: ["admin", "editor"],
         navLink: "/forms/elements/input-mask",
       },
     ],
