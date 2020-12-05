@@ -167,7 +167,7 @@ class ShopContent extends React.Component {
                     onClick={() => this.props.mainSidebar(true)}
                   />
                 </div>
-              
+                <div className="search-results">16285 Results Found</div>
               </div>
               <div className="view-options d-flex justify-content-end w-75">
                 <Select

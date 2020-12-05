@@ -258,7 +258,7 @@ class Checkout extends React.Component {
             <div className="customer-card">
               <Card>
                 <CardHeader>
-                  <CardTitle>Patson</CardTitle>
+                  <CardTitle>John Doe</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <p className="mb-0">9447 Glen Eagles Drive</p>
@@ -303,7 +303,7 @@ class Checkout extends React.Component {
                       <img src={bankLogo} alt="img-placeholder" height="40" />
                       <span>US Unlocked Debit Card 12XX XXXX XXXX 0000</span>
                     </div>
-                    <div className="card-holder-name mt-75">Patson</div>
+                    <div className="card-holder-name mt-75">John Doe</div>
                     <div className="card-expiration-date mt-75">11/2020</div>
                   </div>
                   <div className="customer-cvv mt-1">

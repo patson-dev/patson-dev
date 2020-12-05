@@ -1,21 +1,27 @@
-import React from "react";
-import { Button } from "reactstrap";
-import { PlusSquare } from "react-feather";
-const AddEventButton = (props) => {
+import React from "react"
+import { Button } from "reactstrap"
+import { Plus } from "react-feather"
+import { connect } from "react-redux"
+import {
+  handleSidebar,
+  handleSelectedEvent
+} from "../../../redux/actions/calendar/index"
+const AddEventButton = props => {
   return (
     <Button.Ripple
       color="primary"
       onClick={() => {
-        props.handleSidebar(true);
-        props.handleSelectedEvent(null);
+        props.handleSidebar(true)
+        props.handleSelectedEvent(null)
       }}
-      className="d-sm-block d-none square"
+      className="d-sm-block d-none"
     >
       {" "}
-      <PlusSquare size={20} />{" "}
-      <span className="align-middle">&nbsp;Add Event</span>
+      <Plus size={15} /> <span className="align-middle">Add</span>
     </Button.Ripple>
-  );
-};
+  )
+}
 
-export default AddEventButton;
+export default connect(null, { handleSidebar, handleSelectedEvent })(
+  AddEventButton
+)

@@ -1,5 +1,5 @@
-import React from "react";
-import { X, Tag } from "react-feather";
+import React from "react"
+import { X, Tag } from "react-feather"
 import {
   UncontrolledDropdown,
   DropdownItem,
@@ -8,19 +8,19 @@ import {
   FormGroup,
   Input,
   Label,
-  Button,
-} from "reactstrap";
+  Button
+} from "reactstrap"
 import Flatpickr from "react-flatpickr";
 
 import "flatpickr/dist/themes/light.css";
-import "../../../assets/scss/plugins/forms/flatpickr/flatpickr.scss";
+import "../../../assets/scss/plugins/forms/flatpickr/flatpickr.scss"
 
 const eventColors = {
   business: "chip-success",
   work: "chip-warning",
   personal: "chip-danger",
-  others: "chip-primary",
-};
+  others: "chip-primary"
+}
 class AddEvent extends React.Component {
   state = {
     startDate: new Date(),
@@ -28,28 +28,28 @@ class AddEvent extends React.Component {
     title: "",
     label: null,
     allDay: true,
-    selectable: true,
-  };
-  handleDateChange = (date) => {
+    selectable: true
+  }
+  handleDateChange = date => {
     this.setState({
-      startDate: date,
-    });
-  };
+      startDate: date
+    })
+  }
 
-  handleEndDateChange = (date) => {
+  handleEndDateChange = date => {
     this.setState({
-      endDate: date,
-    });
-  };
+      endDate: date
+    })
+  }
 
-  handleLabelChange = (label) => {
+  handleLabelChange = label => {
     this.setState({
-      label,
-    });
-  };
+      label
+    })
+  }
 
-  handleAddEvent = (id) => {
-    this.props.handleSidebar(false);
+  handleAddEvent = id => {
+    this.props.handleSidebar(false)
     this.props.addEvent({
       id: id,
       title: this.state.title,
@@ -57,17 +57,17 @@ class AddEvent extends React.Component {
       end: this.state.endDate,
       label: this.state.label === null ? "others" : this.state.label,
       allDay: this.state.allDay,
-      selectable: this.state.selectable,
-    });
+      selectable: this.state.selectable
+    })
     this.setState({
       startDate: new Date(),
       endDate: new Date(),
       title: "",
       label: null,
       allDay: true,
-      selectable: true,
-    });
-  };
+      selectable: true
+    })
+  }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
@@ -84,14 +84,14 @@ class AddEvent extends React.Component {
       label: nextProps.eventInfo === null ? null : nextProps.eventInfo.label,
       allDay: nextProps.eventInfo === null ? true : nextProps.eventInfo.allDay,
       selectable:
-        nextProps.eventInfo === null ? true : nextProps.eventInfo.selectable,
-    });
+        nextProps.eventInfo === null ? true : nextProps.eventInfo.selectable
+    })
   }
 
   render() {
-    let events = this.props.events.map((i) => i.id);
-    let lastId = events.pop();
-    let newEventId = lastId + 1;
+    let events = this.props.events.map(i => i.id)
+    let lastId = events.pop()
+    let newEventId = lastId + 1
     return (
       <div
         className={`add-event-sidebar ${
@@ -170,7 +170,7 @@ class AddEvent extends React.Component {
                 id="EventTitle"
                 placeholder="Event Title"
                 value={this.state.title}
-                onChange={(e) => this.setState({ title: e.target.value })}
+                onChange={e => this.setState({ title: e.target.value })}
               />
               <Label for="EventTitle">Event Title</Label>
             </FormGroup>
@@ -180,12 +180,8 @@ class AddEvent extends React.Component {
                 id="startDate"
                 className="form-control"
                 value={this.state.startDate}
-                onChange={(date) => this.handleDateChange(date)}
-                options={{
-                  altInput: true,
-                  altFormat: "F j, Y",
-                  dateFormat: "Y-m-d",
-                }}
+                onChange={date => this.handleDateChange(date)}
+                options={{ altInput: true, altFormat: "F j, Y", dateFormat: "Y-m-d", }}
               />
             </FormGroup>
             <FormGroup>
@@ -194,12 +190,8 @@ class AddEvent extends React.Component {
                 id="endDate"
                 className="form-control"
                 value={this.state.endDate}
-                onChange={(date) => this.handleEndDateChange(date)}
-                options={{
-                  altInput: true,
-                  altFormat: "F j, Y",
-                  dateFormat: "Y-m-d",
-                }}
+                onChange={date => this.handleEndDateChange(date)}
+                options={{ altInput: true, altFormat: "F j, Y", dateFormat: "Y-m-d", }}
               />
             </FormGroup>
           </div>
@@ -208,14 +200,13 @@ class AddEvent extends React.Component {
             <Button.Ripple
               disabled={this.state.title.length > 0 ? false : true}
               color="primary"
-              className="square"
               onClick={() => {
-                this.props.handleSidebar(false);
+                this.props.handleSidebar(false)
                 if (
                   this.props.eventInfo === null ||
                   this.props.eventInfo.title.length <= 0
                 )
-                  this.handleAddEvent(newEventId);
+                  this.handleAddEvent(newEventId)
                 else
                   this.props.updateEvent({
                     id: this.props.eventInfo.id,
@@ -224,8 +215,8 @@ class AddEvent extends React.Component {
                     start: this.state.startDate,
                     end: this.state.endDate,
                     allDay: true,
-                    selectable: true,
-                  });
+                    selectable: true
+                  })
               }}
             >
               {this.props.eventInfo !== null &&
@@ -237,10 +228,10 @@ class AddEvent extends React.Component {
               className="ml-1"
               color="flat-danger"
               onClick={() => {
-                this.props.handleSidebar(false);
+                this.props.handleSidebar(false)
                 if (this.props.handleSelectedEvent)
-                  this.props.handleSelectedEvent(null);
-                else return null;
+                  this.props.handleSelectedEvent(null)
+                else return null
               }}
             >
               Cancel
@@ -248,8 +239,8 @@ class AddEvent extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default AddEvent;
+export default AddEvent

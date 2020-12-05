@@ -48,16 +48,13 @@ class Email extends React.Component {
   render() {
     return (
       <div className="email-application position-relative">
-        
         <div
           className={`app-content-overlay ${
             this.state.composeMailStatus || this.state.sidebarOpen ? "show" : ""
           }`}
           onClick={this.handleMainAndComposeSidebar}
         />
-        
         <ContextLayout.Consumer>
-          
           {context => (
             <Sidebar
               sidebar={

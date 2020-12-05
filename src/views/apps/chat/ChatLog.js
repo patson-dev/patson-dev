@@ -1,8 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Input, Button } from "reactstrap"
-import { Menu, Star, Send } from "react-feather"
+import { MessageSquare, Menu, Star, Send } from "react-feather"
 import PerfectScrollbar from "react-perfect-scrollbar"
+import { connect } from "react-redux"
+import { togglePinned, sendMessage } from "../../../redux/actions/chat/index"
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
 
 class ChatLog extends React.Component {
@@ -157,6 +159,9 @@ class ChatLog extends React.Component {
             className={`start-chat-area ${
               activeUser !== null ? "d-none" : "d-flex"
             }`}>
+            <span className="mb-1 start-chat-icon">
+              <MessageSquare size={50} />
+            </span>
             <h4
               className="py-50 px-1 sidebar-toggle start-chat-text"
               onClick={() => {
@@ -166,7 +171,7 @@ class ChatLog extends React.Component {
                   return null
                 }
               }}>
-              New Message
+              Start Conversation
             </h4>
           </div>
           <div
@@ -276,5 +281,9 @@ class ChatLog extends React.Component {
     )
   }
 }
-
-export default ChatLog;
+const mapStateToProps = state => {
+  return {
+    chat: state.chatApp.chats
+  }
+}
+export default connect(mapStateToProps, { togglePinned, sendMessage })(ChatLog)

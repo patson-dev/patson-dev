@@ -441,10 +441,10 @@
   }
   .navigation-header {
     font-family: inherit;
-    color: #929292;
+    color: $primary;
     padding: 8px 20px;
     font-size: 1rem;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .navbar-dark {
