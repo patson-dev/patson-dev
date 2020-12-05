@@ -18,9 +18,9 @@ import img1 from "../../../assets/img/pages/patson.png";
 export default class DevInfo extends Component {
   render() {
     return (
-      <Row>
+      <Row className="match-height">
         <Col lg="4" md="6" sm="12">
-          <Card>
+          <Card className="bg-transparent shadow-none">
             <CardBody>
               <Media>
                 <Media left href="#">
@@ -61,7 +61,7 @@ export default class DevInfo extends Component {
             <CardBody>
               <h3 className="font-large-1">Tech Skills</h3>
               <hr className="my-1" />
-              <ListGroup>
+              <ListGroup flush>
                 <ListGroupItem>
                   <p className="float-left mb-0 mr-1">
                     <i class="fab fa-react"></i>

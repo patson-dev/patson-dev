@@ -3,17 +3,17 @@ import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
 import Checkbox from "../../../../components/@dev/checkbox/CheckboxesDev";
 import { Check } from "react-feather";
 
-class CheckboxVuexy extends React.Component {
+class CheckboxDev extends React.Component {
   render() {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Vuexy Checkboxes</CardTitle>
+          <CardTitle>Dev Checkboxes</CardTitle>
         </CardHeader>
         <CardBody>
           <p>
-            Use Vuexy checkbox component and pass in icon, label, checked,
-            disabled and class as <code>props</code> to create a Vuexy Checkbox.
+            Use Dev checkbox component and pass in icon, label, checked,
+            disabled and class as <code>props</code> to create a Dev Checkbox.
           </p>
           <div className="d-inline-block mr-1">
             <Checkbox
@@ -54,4 +54,4 @@ class CheckboxVuexy extends React.Component {
     );
   }
 }
-export default CheckboxVuexy;
+export default CheckboxDev;

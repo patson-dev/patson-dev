@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const chipsDefault = (
   <pre>
@@ -22,7 +22,7 @@ export default chipDefault
 `}
     </code>
   </pre>
-)
+);
 
 export const chipsColors = (
   <pre>
@@ -45,7 +45,7 @@ export default chipColors
 `}
     </code>
   </pre>
-)
+);
 
 export const chipsAvatarColors = (
   <pre>
@@ -70,7 +70,7 @@ export default chipAvatarColors
 `}
     </code>
   </pre>
-)
+);
 
 export const chipsIcons = (
   <pre>
@@ -96,7 +96,7 @@ export default chipIcons
 `}
     </code>
   </pre>
-)
+);
 
 export const chipsClosable = (
   <pre>
@@ -113,14 +113,14 @@ class chipClosable extends React.Component {
       <Chip className="mr-1" text="Github" closable />
       <Chip className="mr-1" text="Behance" closable />
       <Chip className="mr-1" text="ReactJS" closable />
-      <Chip text="Vuexy" closable />
+      <Chip text="Dev" closable />
     )}
 }
 export default chipClosable
 `}
     </code>
   </pre>
-)
+);
 
 export const chipsClosableIcons = (
   <pre>
@@ -143,4 +143,4 @@ export default ChipClosableIcons
 `}
     </code>
   </pre>
-)
+);

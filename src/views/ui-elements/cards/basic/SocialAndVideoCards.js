@@ -1,12 +1,12 @@
-import React from "react"
-import { Card, CardHeader, CardTitle, CardBody, Row, Col } from "reactstrap"
+import React from "react";
+import { Card, CardHeader, CardTitle, CardBody, Row, Col } from "reactstrap";
 import {
   MoreVertical,
   ThumbsDown,
   ThumbsUp,
-  MessageSquare
-} from "react-feather"
-import cardImg from "../../../../assets/img/pages/content-img-4.jpg"
+  MessageSquare,
+} from "react-feather";
+import cardImg from "../../../../assets/img/pages/content-img-4.jpg";
 
 class SocialAndVideoCards extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class SocialAndVideoCards extends React.Component {
           <Card>
             <CardHeader className="justify-content-between">
               <div className="card-heading">
-                <CardTitle className="w-100">Vuexy Admin</CardTitle>
+                <CardTitle className="w-100">Dev Admin</CardTitle>
                 <p>by Pixinvent Creative Studio</p>
               </div>
               <div className="icon mb-5">
@@ -58,7 +58,7 @@ class SocialAndVideoCards extends React.Component {
           </Card>
         </Col>
       </Row>
-    )
+    );
   }
 }
-export default SocialAndVideoCards
+export default SocialAndVideoCards;

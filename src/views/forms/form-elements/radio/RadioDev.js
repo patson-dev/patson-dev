@@ -7,12 +7,12 @@ class RadioDev extends React.Component {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Vuexy Radio</CardTitle>
+          <CardTitle>Dev Radio</CardTitle>
         </CardHeader>
         <CardBody>
           <p>
-            Use Vuexy radio component and pass in label, checked, disabled and
-            class as <code>props</code> to create a Vuexy radio.
+            Use Dev radio component and pass in label, checked, disabled and
+            class as <code>props</code> to create a Dev radio.
           </p>
           <div className="d-inline-block mr-1">
             <Radio label="Active" defaultChecked={true} name="exampleRadio" />

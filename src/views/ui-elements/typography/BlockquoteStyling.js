@@ -1,5 +1,5 @@
-import React from "react"
-import { Card, CardHeader, CardTitle, CardBody } from "reactstrap"
+import React from "react";
+import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
 
 class BlockquoteStyling extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class BlockquoteStyling extends React.Component {
             <code className="highlighter-rouge">
               .border-[left / right]-[color] .border-[left / right]-3
             </code>{" "}
-            helper classes, where color can be any color from Vuexy Admin color
+            helper classes, where color can be any color from Dev Admin color
             palette.
           </p>
           <blockquote className="blockquote pl-1 border-left-primary border-left-3">
@@ -39,7 +39,7 @@ class BlockquoteStyling extends React.Component {
           </blockquote>
         </CardBody>
       </Card>
-    )
+    );
   }
 }
-export default BlockquoteStyling
+export default BlockquoteStyling;

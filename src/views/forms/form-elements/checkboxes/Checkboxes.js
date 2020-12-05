@@ -3,7 +3,7 @@ import { Row, Col } from "reactstrap";
 import Breadcrumbs from "../../../../components/@dev/breadCrumbs/BreadCrumb";
 import BasicCheckboxes from "./CheckboxesBasic";
 import CustomCheckboxes from "./CheckboxesCustom";
-import VuexyCheckboxes from "./CheckboxVuexy";
+import DevCheckboxes from "./CheckboxDev";
 import CheckboxesColors from "./CheckboxesColors";
 import CheckboxesIcon from "./CheckboxesIcon";
 import CheckboxesSizes from "./CheckboxesSizes";
@@ -25,7 +25,7 @@ class Checkbox extends React.Component {
             <CustomCheckboxes />
           </Col>
           <Col lg="6" sm="12">
-            <VuexyCheckboxes />
+            <DevCheckboxes />
           </Col>
           <Col lg="6" sm="12">
             <CheckboxesColors />

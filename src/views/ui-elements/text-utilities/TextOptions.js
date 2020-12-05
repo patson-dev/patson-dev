@@ -1,7 +1,7 @@
-import React from "react"
-import { Card, CardHeader, CardTitle, CardBody, Table } from "reactstrap"
+import React from "react";
+import { Card, CardHeader, CardTitle, CardBody, Table } from "reactstrap";
 // eslint-disable-next-line
-import prism from "prismjs"
+import prism from "prismjs";
 
 class TextOptions extends React.Component {
   render() {
@@ -12,9 +12,7 @@ class TextOptions extends React.Component {
         </CardHeader>
         <CardBody>
           <h5 className="mb-1">Font Size</h5>
-          <p>
-            Vuexy Admin provides diffrent helper classes to change font size.
-          </p>
+          <p>Dev Admin provides diffrent helper classes to change font size.</p>
         </CardBody>
         <Table className="table-white-space" responsive>
           <thead>
@@ -72,8 +70,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quotfont-medium-3&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quotfont-medium-3&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -86,8 +83,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quotfont-medium-2&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quotfont-medium-2&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -100,8 +96,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quotfont-medium-1&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quotfont-medium-1&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -161,8 +156,8 @@ class TextOptions extends React.Component {
         <CardBody>
           <h5 className="mb-1">Font Weight</h5>
           <p>
-            Vuexy Admin provide font weight class{" "}
-            <code>.text-bold-[weight]</code>, where
+            Dev Admin provide font weight class <code>.text-bold-[weight]</code>
+            , where
             <code>[weight] value can be 300, 400, 500, 600, 700.</code>
           </p>
         </CardBody>
@@ -183,8 +178,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quottext-bold-300&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quottext-bold-300&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -197,8 +191,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quottext-bold-400&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quottext-bold-400&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -211,8 +204,7 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp class=&quottext-bold-600&quot&gtYour
-                    Text.&lt/p&gt
+                    &ltp class=&quottext-bold-600&quot&gtYour Text.&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -266,8 +258,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &ltdel&gtThis line of text is meant to be
-                    treated as deleted text.&lt/del&gt&lt/p&gt
+                    &ltp&gt &ltdel&gtThis line of text is meant to be treated as
+                    deleted text.&lt/del&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -282,8 +274,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &lts&gtThis line of text is meant to be treated
-                    as no longer accurate.&lt/s&gt&lt/p&gt
+                    &ltp&gt &lts&gtThis line of text is meant to be treated as
+                    no longer accurate.&lt/s&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -298,8 +290,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &lts&gtThis line of text is meant to be treated
-                    as no longer accurate.&lt/s&gt&lt/p&gt
+                    &ltp&gt &lts&gtThis line of text is meant to be treated as
+                    no longer accurate.&lt/s&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -314,9 +306,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt This line of text &ltins&gt is meant to be
-                    treated as an addition to the
-                    document.&lt/ins&gt&lt/p&gt
+                    &ltp&gt This line of text &ltins&gt is meant to be treated
+                    as an addition to the document.&lt/ins&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -328,8 +319,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &ltu&gt This line of text will render as
-                    underlined. &lt/u&gt&lt/p&gt
+                    &ltp&gt &ltu&gt This line of text will render as underlined.
+                    &lt/u&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -343,8 +334,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &ltsmall&gt This line of text is meant to be
-                    treated as fine print. &lt/small&gt&lt/p&gt
+                    &ltp&gt &ltsmall&gt This line of text is meant to be treated
+                    as fine print. &lt/small&gt&lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -396,9 +387,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltp&gt &ltvar&gty&lt/var&gt =
-                    &ltvar&gtm&lt/var&gt + &ltvar&gtb&lt/var&gt
-                    &lt/p&gt
+                    &ltp&gt &ltvar&gty&lt/var&gt = &ltvar&gtm&lt/var&gt +
+                    &ltvar&gtb&lt/var&gt &lt/p&gt
                   </code>
                 </pre>
               </td>
@@ -426,8 +416,8 @@ class TextOptions extends React.Component {
               <td>
                 <pre>
                   <code className="language-markup">
-                    &ltsamp&gtThis text is meant to be treated as sample
-                    output from a computer program.&lt/samp&gt
+                    &ltsamp&gtThis text is meant to be treated as sample output
+                    from a computer program.&lt/samp&gt
                   </code>
                 </pre>
               </td>
@@ -448,7 +438,7 @@ class TextOptions extends React.Component {
           </tbody>
         </Table>
       </Card>
-    )
+    );
   }
 }
-export default TextOptions
+export default TextOptions;

@@ -103,7 +103,7 @@ const AutoComplete = lazy(() =>
 );
 const chips = lazy(() => import("./components/@dev/chips/Chips"));
 const divider = lazy(() => import("./components/@dev/divider/Divider"));
-const vuexyWizard = lazy(() => import("./components/@dev/wizard/Wizard"));
+const DevWizard = lazy(() => import("./components/@dev/wizard/Wizard"));
 const listView = lazy(() => import("./views/ui-elements/data-list/ListView"));
 const thumbView = lazy(() => import("./views/ui-elements/data-list/ThumbView"));
 const select = lazy(() => import("./views/forms/form-elements/select/Select"));
@@ -291,7 +291,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/extra-components/avatar" component={avatar} />
           <AppRoute path="/extra-components/chips" component={chips} />
           <AppRoute path="/extra-components/divider" component={divider} />
-          <AppRoute path="/forms/wizard" component={vuexyWizard} />
+          <AppRoute path="/forms/wizard" component={DevWizard} />
           <AppRoute path="/forms/elements/select" component={select} />
           <AppRoute path="/forms/elements/switch" component={switchComponent} />
           <AppRoute path="/forms/elements/checkbox" component={checkbox} />

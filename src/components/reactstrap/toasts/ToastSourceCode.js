@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const toastTranslucent = (
   <pre>
@@ -133,7 +133,7 @@ export default ToastTransclucent
 `}
     </code>
   </pre>
-)
+);
 
 export const toastBasic = (
   <pre>
@@ -180,7 +180,7 @@ export default ToastBasic
 `}
     </code>
   </pre>
-)
+);
 
 export const toastHeaderIcons = (
   <pre>
@@ -198,7 +198,7 @@ class ToastHeaderIcons extends React.Component {
       <Row>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="primary">Vuexy</ToastHeader>
+            <ToastHeader icon="primary">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a primary icon — check it out!
             </ToastBody>
@@ -206,7 +206,7 @@ class ToastHeaderIcons extends React.Component {
         </Col>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="success">Vuexy</ToastHeader>
+            <ToastHeader icon="success">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a success icon — check it out!
             </ToastBody>
@@ -214,7 +214,7 @@ class ToastHeaderIcons extends React.Component {
         </Col>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="info">Vuexy</ToastHeader>
+            <ToastHeader icon="info">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a info icon — check it out!
             </ToastBody>
@@ -222,7 +222,7 @@ class ToastHeaderIcons extends React.Component {
         </Col>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="danger">Vuexy</ToastHeader>
+            <ToastHeader icon="danger">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a danger icon — check it out!
             </ToastBody>
@@ -230,7 +230,7 @@ class ToastHeaderIcons extends React.Component {
         </Col>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="warning">Vuexy</ToastHeader>
+            <ToastHeader icon="warning">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a warning icon — check it out!
             </ToastBody>
@@ -238,7 +238,7 @@ class ToastHeaderIcons extends React.Component {
         </Col>
         <Col md="6" sm="12">
           <Toast>
-            <ToastHeader icon="dark">Vuexy</ToastHeader>
+            <ToastHeader icon="dark">Dev</ToastHeader>
             <ToastBody>
               This is a toast with a dark icon — check it out!
             </ToastBody>
@@ -248,7 +248,7 @@ class ToastHeaderIcons extends React.Component {
         <Col md="6" sm="12">
           <Toast>
             <ToastHeader icon={<Spinner size="sm" color="primary" />}>
-              Vuexy
+              Dev
             </ToastHeader>
             <ToastBody>
               This is a toast with a spinner — check it out!
@@ -260,7 +260,7 @@ class ToastHeaderIcons extends React.Component {
           <Toast>
             <ToastHeader>
               <img src={logo} alt="logo" className="mr-1" />
-              Vuexy
+              Dev
             </ToastHeader>
             <ToastBody>
               This is a toast with a logo — check it out!
@@ -275,4 +275,4 @@ export default ToastHeaderIcons
 `}
     </code>
   </pre>
-)
+);
