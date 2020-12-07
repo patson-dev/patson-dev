@@ -18,6 +18,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.TrendingUp size={20} />,
     navLink: "/cards/analytics",
+    collapsed: true,
   },
   {
     id: "dataTable",
@@ -25,6 +26,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.Server size={20} />,
     navLink: "/tables/data-tables",
+    collapsed: true,
   },
   {
     id: "statistics",
@@ -32,6 +34,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.BarChart2 size={20} />,
     navLink: "/cards/statistics",
+    collapsed: true,
   },
   {
     type: "groupHeader",
@@ -44,6 +47,7 @@ const navigationConfig = [
     icon: <Icon.List size={20} />,
     navLink: "/todo/:filter",
     filterBase: "/todo/all",
+    collapsed: true,
   },
   {
     id: "email",
@@ -52,6 +56,7 @@ const navigationConfig = [
     icon: <Icon.Mail size={20} />,
     navLink: "/email/:filter",
     filterBase: "/email/inbox",
+    collapsed: true,
   },
   {
     id: "chat",
@@ -59,6 +64,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.MessageSquare size={20} />,
     navLink: "/chat",
+    collapsed: true,
   },
   {
     id: "calendar",
@@ -66,6 +72,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.Calendar size={20} />,
     navLink: "/calendar",
+    collapsed: true,
   },
   {
     type: "groupHeader",
@@ -77,6 +84,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.ShoppingCart size={20} />,
     navLink: "/ecommerce/shop",
+    collapsed: true,
   },
   {
     id: "detail",
@@ -84,6 +92,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.AlignCenter size={20} />,
     navLink: "/ecommerce/product-detail",
+    collapsed: true,
   },
   {
     id: "wishList",
@@ -91,6 +100,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.Heart size={20} />,
     navLink: "/ecommerce/wishlist",
+    collapsed: true,
   },
   {
     id: "checkout",
@@ -98,6 +108,7 @@ const navigationConfig = [
     type: "item",
     icon: <Icon.DollarSign size={20} />,
     navLink: "/ecommerce/checkout",
+    collapsed: true,
   },
   {
     type: "groupHeader",
@@ -110,6 +121,7 @@ const navigationConfig = [
     icon: <Icon.Type size={20} />,
     permissions: ["admin", "editor"],
     navLink: "/ui-element/typography",
+    collapsed: true,
   },
   {
     id: "textUitlities",
@@ -359,6 +371,7 @@ const navigationConfig = [
     icon: <Icon.Layout size={20} />,
     permissions: ["admin", "editor"],
     navLink: "/forms/layout/form-layout",
+    collapsed: true,
   },
 ];
 

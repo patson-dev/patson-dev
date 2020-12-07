@@ -1,29 +1,29 @@
-import React from "react"
-import { Card, CardHeader, CardTitle, CardBody } from "reactstrap"
-import Chart from "react-apexcharts"
-import { Settings } from "react-feather"
+import React from "react";
+import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
+import Chart from "react-apexcharts";
+import { Settings } from "react-feather";
 
-class Revenue extends React.Component {
+class Portfolio extends React.Component {
   state = {
     options: {
       chart: {
         toolbar: {
-          show: false
+          show: false,
         },
         animations: {
-          enabled: false
-        }
+          enabled: false,
+        },
       },
       stroke: {
         curve: "smooth",
         dashArray: [0, 8],
-        width: [4, 2]
+        width: [4, 2],
       },
       grid: {
-        borderColor: this.props.labelColor
+        borderColor: this.props.labelColor,
       },
       legend: {
-        show: false
+        show: false,
       },
       colors: [this.props.dangerLight, this.props.strokeColor],
 
@@ -37,56 +37,56 @@ class Revenue extends React.Component {
           type: "horizontal",
           opacityFrom: 1,
           opacityTo: 1,
-          stops: [0, 100, 100, 100]
-        }
+          stops: [0, 100, 100, 100],
+        },
       },
       markers: {
         size: 0,
         hover: {
-          size: 5
-        }
+          size: 5,
+        },
       },
       xaxis: {
         labels: {
           style: {
-            colors: this.props.strokeColor
-          }
+            colors: this.props.strokeColor,
+          },
         },
         axisTicks: {
-          show: false
+          show: false,
         },
         categories: ["01", "05", "09", "13", "17", "21", "26", "31"],
         axisBorder: {
-          show: false
+          show: false,
         },
-        tickPlacement: "on"
+        tickPlacement: "on",
       },
       yaxis: {
         tickAmount: 5,
         labels: {
           style: {
-            color: this.props.strokeColor
+            color: this.props.strokeColor,
           },
-          formatter: val => {
-            return val > 999 ? (val / 1000).toFixed(1) + "k" : val
-          }
-        }
+          formatter: (val) => {
+            return val > 999 ? (val / 1000).toFixed(1) + "k" : val;
+          },
+        },
       },
       tooltip: {
-        x: { show: false }
-      }
+        x: { show: false },
+      },
     },
     series: [
       {
         name: "This Month",
-        data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600]
+        data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600],
       },
       {
         name: "Last Month",
-        data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000]
-      }
-    ]
-  }
+        data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000],
+      },
+    ],
+  };
   render() {
     return (
       <Card>
@@ -119,7 +119,7 @@ class Revenue extends React.Component {
           />
         </CardBody>
       </Card>
-    )
+    );
   }
 }
-export default Revenue
+export default Portfolio;

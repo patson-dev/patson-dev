@@ -3,7 +3,7 @@ import { Row, Col } from "reactstrap";
 import Breadcrumbs from "../../../../components/@dev/breadCrumbs/BreadCrumb";
 import Sales from "./Sales";
 import SupportTracker from "./SupportTracker";
-import Revenue from "./Revenue";
+import Portfolio from "./Portfolio";
 import GoalOverview from "./GoalOverview";
 import AvgSession from "./AvgSessions";
 import Tasks from "./Tasks";
@@ -31,12 +31,12 @@ class AnalyticsCards extends React.Component {
       <React.Fragment>
         <Breadcrumbs
           breadCrumbTitle="Analytics"
-          breadCrumbParent="Card"
-          breadCrumbActive="Analytics Cards"
+          breadCrumbParent="Data Display"
+          breadCrumbActive="Analytics"
         />
         <Row>
           <Col lg="8" sm="12">
-            <Revenue
+            <Portfolio
               primary={$primary}
               dangerLight={$danger_light}
               strokeColor={$stroke_color}
