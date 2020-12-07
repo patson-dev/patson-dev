@@ -4,7 +4,7 @@ import SubscribersGained from "../../ui-elements/cards/statistics/SubscriberGain
 import RevenueGenerated from "../../ui-elements/cards/statistics/RevenueGenerated";
 import QuaterlySales from "../../ui-elements/cards/statistics/QuaterlySales";
 import OrdersReceived from "../../ui-elements/cards/statistics/OrdersReceived";
-import RevenueChart from "../../ui-elements/cards/analytics/Revenue";
+import RevenueChart from "../../ui-elements/cards/analytics/Portfolio";
 import GoalOverview from "../../ui-elements/cards/analytics/GoalOverview";
 import BrowserStats from "../../ui-elements/cards/analytics/BrowserStatistics";
 import ClientRetention from "../../ui-elements/cards/analytics/ClientRetention";

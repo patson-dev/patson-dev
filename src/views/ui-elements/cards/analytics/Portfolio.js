@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
 import Chart from "react-apexcharts";
-import { Settings } from "react-feather";
+import { ArrowUp } from "react-feather";
 
 class Portfolio extends React.Component {
   state = {
@@ -78,11 +78,11 @@ class Portfolio extends React.Component {
     },
     series: [
       {
-        name: "This Month",
+        name: "Current Month",
         data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600],
       },
       {
-        name: "Last Month",
+        name: "Previous Month",
         data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000],
       },
     ],
@@ -91,23 +91,29 @@ class Portfolio extends React.Component {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Portfolio Value</CardTitle>
-          <Settings size={20} className="cursor-pointer text-muted" />
+          <CardTitle className="font-large-1 text-primary">
+            Portfolio Tracker
+          </CardTitle>
+          <ArrowUp size={20} className="cursor-pointer text-success" />
         </CardHeader>
         <CardBody>
-          <div className="d-flex justify-content-start mb-1">
+          <div className="d-flex justify-content-end mb-1">
             <div className="mr-2">
-              <p className="mb-50 text-bold-600">This Month</p>
+              <p className="mb-50 text-bold-600 font-small-1 text-primary">
+                Current Month
+              </p>
               <h2 className="text-bold-400">
                 <sup className="font-medium-1 mr-50">$</sup>
-                <span className="text-success">86,589</span>
+                <span className="text-success">48,600</span>
               </h2>
             </div>
             <div>
-              <p className="mb-50 text-bold-600">Last Month</p>
+              <p className="mb-50 text-bold-600 font-small-1 text-primary">
+                Previous Month
+              </p>
               <h2 className="text-bold-400">
                 <sup className="font-medium-1 mr-50">$</sup>
-                <span>73,683</span>
+                <span>47,000</span>
               </h2>
             </div>
           </div>
