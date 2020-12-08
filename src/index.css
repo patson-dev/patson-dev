@@ -1,17 +1,16 @@
-
 *.font-bebas {
- font-family: 'Bebas Neue', cursive !important;
+  font-family: "Bebas Neue", cursive !important;
 }
 *.font-caesar {
-font-family: 'Caesar Dressing', cursive  !important;
+  font-family: "Caesar Dressing", cursive !important;
 }
 
 *.font-comfortaa {
- font-family: 'Comfortaa', cursive !important;
+  font-family: "Comfortaa", cursive !important;
 }
 
 *.font-libre {
- font-family: 'Libre Barcode 128 Text', cursive !important;
+  font-family: "Libre Barcode 128 Text", cursive !important;
 }
 
 *.font-major {
@@ -19,19 +18,19 @@ font-family: 'Caesar Dressing', cursive  !important;
 }
 
 *.font-megrim {
- font-family: 'Megrim', cursive !important;
+  font-family: "Megrim", cursive !important;
 }
 
 *.font-monoton {
- font-family: 'Monoton', cursive !important;
+  font-family: "Monoton", cursive !important;
 }
 
 *.font-open {
- font-family: 'Open Sans', sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 *.font-cond {
- font-family: 'Ubuntu Condensed', sans-serif !important;
+  font-family: "Ubuntu Condensed", sans-serif !important;
 }
 
 *.font-mono {
@@ -39,7 +38,9 @@ font-family: 'Caesar Dressing', cursive  !important;
 }
 
 *.font-one {
- font-family: 'Unica One', cursive !important;
+  font-family: "Unica One", cursive !important;
 }
 
-
+*.full-view {
+  height: 70vh;
+}

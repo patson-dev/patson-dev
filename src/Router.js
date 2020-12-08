@@ -10,12 +10,10 @@ import { ContextLayout } from "./utility/context/Layout";
 
 // Route-based code splitting
 const home = lazy(() => import("./views/pages/home/HomePage"));
-const analyticsDashboard = lazy(() =>
-  import("./views/dashboard/analytics/AnalyticsDashboard")
-);
-const ecommerceDashboard = lazy(() =>
-  import("./views/dashboard/ecommerce/EcommerceDashboard")
-);
+const contact = lazy(() => import("./views/sections/contact/Contact"));
+const cta = lazy(() => import("./views/sections/cta/CTA"));
+const feedback = lazy(() => import("./views/sections/feedback/Feedback"));
+const pricing = lazy(() => import("./views/sections/pricing/Pricing"));
 const email = lazy(() => import("./views/apps/email/Email"));
 const chat = lazy(() => import("./views/apps/chat/Chat"));
 const todo = lazy(() => import("./views/apps/todo/Todo"));
@@ -132,12 +130,6 @@ const inputMask = lazy(() =>
 );
 const layout = lazy(() => import("./views/forms/form-layouts/FormLayouts"));
 const formik = lazy(() => import("./views/forms/formik/Formik"));
-const tables = lazy(() => import("./views/tables/reactstrap/Tables"));
-const ReactTables = lazy(() =>
-  import("./views/tables/react-tables/ReactTables")
-);
-const Aggrid = lazy(() => import("./views/tables/aggrid/Aggrid"));
-const DataTable = lazy(() => import("./views/tables/data-tables/DataTables"));
 const profile = lazy(() => import("./views/pages/profile/Profile"));
 const faq = lazy(() => import("./views/pages/faq/FAQ"));
 const knowledgeBase = lazy(() =>
@@ -153,10 +145,6 @@ const error404 = lazy(() => import("./views/pages/misc/error/404"));
 const error500 = lazy(() => import("./views/pages/misc/error/500"));
 const authorized = lazy(() => import("./views/pages/misc/NotAuthorized"));
 const maintenance = lazy(() => import("./views/pages/misc/Maintenance"));
-const apex = lazy(() => import("./views/charts/apex/ApexCharts"));
-const chartjs = lazy(() => import("./views/charts/chart-js/ChartJS"));
-const extreme = lazy(() => import("./views/charts/recharts/Recharts"));
-const leafletMaps = lazy(() => import("./views/maps/Maps"));
 const userList = lazy(() => import("./views/apps/user/list/List"));
 const userEdit = lazy(() => import("./views/apps/user/edit/Edit"));
 const userView = lazy(() => import("./views/apps/user/view/View"));
@@ -215,15 +203,10 @@ class AppRouter extends React.Component {
       <Router history={history}>
         <Switch>
           <AppRoute exact path="/" component={home} />
-          <AppRoute
-            exact
-            path="/analytics-dashboard"
-            component={analyticsDashboard}
-          />
-          <AppRoute
-            path="/ecommerce-dashboard"
-            component={ecommerceDashboard}
-          />
+          <AppRoute exact path="/sections/contact" component={contact} />
+          <AppRoute exact path="/sections/feedback" component={feedback} />
+          <AppRoute exact path="/sections/call-to-action" component={cta} />
+          <AppRoute exact path="/sections/pricing" component={pricing} />
           <AppRoute
             path="/email"
             exact
@@ -306,11 +289,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/forms/elements/pickers" component={pickers} />
           <AppRoute path="/forms/elements/input-mask" component={inputMask} />
           <AppRoute path="/forms/layout/form-layout" component={layout} />
-          <AppRoute path="/forms/formik" component={formik} />{" "}
-          <AppRoute path="/tables/reactstrap" component={tables} />
-          <AppRoute path="/tables/react-tables" component={ReactTables} />
-          <AppRoute path="/tables/agGrid" component={Aggrid} />
-          <AppRoute path="/tables/data-tables" component={DataTable} />
+          <AppRoute path="/forms/formik" component={formik} />
           <AppRoute path="/pages/profile" component={profile} />
           <AppRoute path="/pages/faq" component={faq} />
           <AppRoute
@@ -346,10 +325,6 @@ class AppRouter extends React.Component {
           <AppRoute path="/app/user/list" component={userList} />
           <AppRoute path="/app/user/edit" component={userEdit} />
           <AppRoute path="/app/user/view" component={userView} />
-          <AppRoute path="/charts/apex" component={apex} />
-          <AppRoute path="/charts/chartjs" component={chartjs} />
-          <AppRoute path="/charts/recharts" component={extreme} />
-          <AppRoute path="/maps/leaflet" component={leafletMaps} />
           <AppRoute component={error404} />
         </Switch>
       </Router>
