@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Check, X } from "react-feather";
 import { Card, CardBody, Row, Col, Button } from "reactstrap";
 
 export default class Three extends Component {

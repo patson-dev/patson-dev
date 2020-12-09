@@ -9,7 +9,7 @@ export default class One extends Component {
         <div className="divider text-left">
           <div className="divider-text">1st Example</div>
         </div>
-        <Card className="">
+        <Card>
           <CardBody className="container">
             <h1 className="font-large-3 mt-5 font-bebas">Pricing</h1>
             <p className="font-medium-2">
